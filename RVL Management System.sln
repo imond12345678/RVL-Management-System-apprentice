@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RVL Management System", "RVL Management System\RVL Management System.csproj", "{7530F541-0C49-4AEA-8D6F-924F6A376668}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RvlManagementSystem", "RvlManagementSystem\RvlManagementSystem.vdproj", "{EAA9FEE3-8C0B-422B-8206-0958DA4A0424}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7530F541-0C49-4AEA-8D6F-924F6A376668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7530F541-0C49-4AEA-8D6F-924F6A376668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7530F541-0C49-4AEA-8D6F-924F6A376668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7530F541-0C49-4AEA-8D6F-924F6A376668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA9FEE3-8C0B-422B-8206-0958DA4A0424}.Debug|Any CPU.ActiveCfg = Debug
+		{EAA9FEE3-8C0B-422B-8206-0958DA4A0424}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
