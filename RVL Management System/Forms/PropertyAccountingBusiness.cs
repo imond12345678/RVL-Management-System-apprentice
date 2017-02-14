@@ -129,49 +129,55 @@ namespace RVL_Management_System.Forms
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to save these information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (cBoxPayment.Text == string.Empty || cBoxPaid.Text == string.Empty || txt_apn.Text == string.Empty || txt_closedSale.Text == string.Empty || txt_origPrice.Text == string.Empty || txt_originalPriceExpense.Text == string.Empty || txt_netSale.Text == string.Empty || txt_balanceDue.Text == string.Empty || cBoxSoldFrom.Text == string.Empty || cBoxSoldTo.Text == string.Empty || txt_shared60.Text == string.Empty || txt_shared40.Text == string.Empty || txt_checkNumber.Text == string.Empty || txt_invoiceNumber.Text == string.Empty || txt_amount.Text == string.Empty || txt_categoryExpense.Text == string.Empty || txt_paymentNotes.Text == string.Empty || txt_memo.Text == string.Empty)
             {
-                typeAccount = cBoxAccount.Text;
-                typePayment = cBoxPayment.Text;
-                paidVia = cBoxPaid.Text;
-                apnID = txt_apn.Text;
-                dateSold = dtSold.Text;
-                dateAquired = dtAquired.Text;
-                closedSale = txt_closedSale.Text;
-                originalPrice = txt_origPrice.Text;
-                originalPriceExpense = txt_originalPriceExpense.Text;
-                netSale = txt_netSale.Text;
-                balanceDue = txt_balanceDue.Text;
-                soldFrom = cBoxSoldFrom.Text;
-                soldTo = cBoxSoldTo.Text;
-                termsLLC = txt_termsLLC.Text;
-                shared60 = txt_shared60.Text;
-                shared40 = txt_shared40.Text;
-                checkNumber = txt_checkNumber.Text;
-                invoiceNumber = txt_invoiceNumber.Text;
-                memo = txt_memo.Text;
-                datePayment = dtPayment.Text;
-                amountPayment = txt_amount.Text;
-                totalAmountPaid = txt_totalAmountPaid.Text;
-                totalLandCost = txt_landCost.Text;
-                paymentBalanceDue = txt_paymentsBalanceDue.Text;
-                categoryExpense = txt_categoryExpense.Text;
-                notes = txt_paymentNotes.Text;
-                recordingFee = txt_recordingFee.Text;
-                cardProcessingFee = txt_cardProcessingFee.Text;
-                backTaxes = txt_backTaxes.Text;
-                notary = txt_Notary.Text;
-                otherExpense = txt_otherExpense.Text;
-                totalExpense = txt_totalExpense.Text;
-                netProfit = txt_netProfit.Text;
-                Class.Cls_cmd.accountingBusinessAdd();
-                loadPayments();
-                computePayments();
+                MetroMessageBox.Show(this, "Please fill up the requirement fields - Type of Payment, Paid Via, APN ID, Closed sale amount, Original Price, Original Price + Expense, Net Sale, Balance due, Sold From, Sold To, Shared 1-60%, Shared 1-40%, Check number, Invoice Number, Memo, Amount, Category Expense, Notes, Recording Fee, Card processing fee, Back taxes, Notary, Other Expense", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            else
-            {
-                //IF NO
-                //TODO:NOTHING
+            else {
+                if (MetroMessageBox.Show(this, "Do you want to save these information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    typeAccount = cBoxAccount.Text;
+                    typePayment = cBoxPayment.Text;
+                    paidVia = cBoxPaid.Text;
+                    apnID = txt_apn.Text;
+                    dateSold = dtSold.Text;
+                    dateAquired = dtAquired.Text;
+                    closedSale = txt_closedSale.Text;
+                    originalPrice = txt_origPrice.Text;
+                    originalPriceExpense = txt_originalPriceExpense.Text;
+                    netSale = txt_netSale.Text;
+                    balanceDue = txt_balanceDue.Text;
+                    soldFrom = cBoxSoldFrom.Text;
+                    soldTo = cBoxSoldTo.Text;
+                    termsLLC = txt_termsLLC.Text;
+                    shared60 = txt_shared60.Text;
+                    shared40 = txt_shared40.Text;
+                    checkNumber = txt_checkNumber.Text;
+                    invoiceNumber = txt_invoiceNumber.Text;
+                    memo = txt_memo.Text;
+                    datePayment = dtPayment.Text;
+                    amountPayment = txt_amount.Text;
+                    totalAmountPaid = txt_totalAmountPaid.Text;
+                    totalLandCost = txt_landCost.Text;
+                    paymentBalanceDue = txt_paymentsBalanceDue.Text;
+                    categoryExpense = txt_categoryExpense.Text;
+                    notes = txt_paymentNotes.Text;
+                    recordingFee = txt_recordingFee.Text;
+                    cardProcessingFee = txt_cardProcessingFee.Text;
+                    backTaxes = txt_backTaxes.Text;
+                    notary = txt_Notary.Text;
+                    otherExpense = txt_otherExpense.Text;
+                    totalExpense = txt_totalExpense.Text;
+                    netProfit = txt_netProfit.Text;
+                    Class.Cls_cmd.accountingBusinessAdd();
+                    loadPayments();
+                    computePayments();
+                }
+                else
+                {
+                    //IF NO
+                    //TODO:NOTHING
+                }
             }
         }
 

@@ -31,8 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_clear = new MetroFramework.Controls.MetroTile();
+            this.btn_update = new MetroFramework.Controls.MetroTile();
             this.cBoxLeadAssesment = new System.Windows.Forms.ComboBox();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.cBoxLeadAssigned = new System.Windows.Forms.ComboBox();
@@ -60,22 +61,9 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.GridView = new MetroFramework.Controls.MetroGrid();
-            this.btn_clear = new MetroFramework.Controls.MetroTile();
-            this.btn_update = new MetroFramework.Controls.MetroTile();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 54);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Marketing Update";
             // 
             // groupBox1
             // 
@@ -116,6 +104,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marketing Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.ActiveControl = null;
+            this.btn_clear.Location = new System.Drawing.Point(775, 297);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(77, 58);
+            this.btn_clear.Style = MetroFramework.MetroColorStyle.Orange;
+            this.btn_clear.TabIndex = 100;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_clear.TileImage = global::RVL_Management_System.Properties.Resources.cancel;
+            this.btn_clear.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_clear.UseSelectable = true;
+            this.btn_clear.UseTileImage = true;
+            // 
+            // btn_update
+            // 
+            this.btn_update.ActiveControl = null;
+            this.btn_update.Location = new System.Drawing.Point(858, 297);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(86, 58);
+            this.btn_update.Style = MetroFramework.MetroColorStyle.Silver;
+            this.btn_update.TabIndex = 99;
+            this.btn_update.Text = "Update";
+            this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_update.TileImage = global::RVL_Management_System.Properties.Resources.edit_1;
+            this.btn_update.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_update.UseSelectable = true;
+            this.btn_update.UseTileImage = true;
+            this.btn_update.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // cBoxLeadAssesment
             // 
@@ -650,62 +669,28 @@
             this.GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_CellContentClick);
             this.GridView.SelectionChanged += new System.EventHandler(this.GridView_SelectionChanged);
             // 
-            // btn_clear
-            // 
-            this.btn_clear.ActiveControl = null;
-            this.btn_clear.Location = new System.Drawing.Point(775, 297);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(77, 58);
-            this.btn_clear.Style = MetroFramework.MetroColorStyle.Orange;
-            this.btn_clear.TabIndex = 100;
-            this.btn_clear.Text = "Clear";
-            this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_clear.TileImage = global::RVL_Management_System.Properties.Resources.cancel;
-            this.btn_clear.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clear.UseSelectable = true;
-            this.btn_clear.UseTileImage = true;
-            // 
-            // btn_update
-            // 
-            this.btn_update.ActiveControl = null;
-            this.btn_update.Location = new System.Drawing.Point(858, 297);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(86, 58);
-            this.btn_update.Style = MetroFramework.MetroColorStyle.Silver;
-            this.btn_update.TabIndex = 99;
-            this.btn_update.Text = "Update";
-            this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_update.TileImage = global::RVL_Management_System.Properties.Resources.edit_1;
-            this.btn_update.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_update.UseSelectable = true;
-            this.btn_update.UseTileImage = true;
-            this.btn_update.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
             // MarketingUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 626);
             this.Controls.Add(this.GridView);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MarketingUpdate";
             this.Resizable = false;
+            this.Text = "Marketing Update";
             this.Load += new System.EventHandler(this.Frm_MarketingUpdate_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_MarketingUpdate_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cBoxPriority;
         private System.Windows.Forms.ComboBox cBoxLeadFollowUp;
         private MetroFramework.Controls.MetroTextBox txt_others;

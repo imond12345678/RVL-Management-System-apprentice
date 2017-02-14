@@ -210,5 +210,11 @@ namespace RVL_Management_System.Forms
             PropertyInventory inventory = new PropertyInventory();
             inventory.ShowDialog();
         }
+
+        private void metroTile7_Click_1(object sender, EventArgs e)
+        {
+            MarketingView view = new MarketingView();
+            view.ShowDialog();
+        }
     }
 }

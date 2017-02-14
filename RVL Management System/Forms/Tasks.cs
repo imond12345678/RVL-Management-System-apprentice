@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using MetroFramework.Forms;
+using MetroFramework;
 using System.Runtime.InteropServices;
 
 namespace RVL_Management_System
@@ -62,12 +63,30 @@ namespace RVL_Management_System
             conn.Close();
         }
 
-        public void taskSearch()
+        public void taskSearchID()
         {
             conn.Open();
             cmd.Connection = conn;
-            string Show = "SELECT UID, Last_Name+', '+First_Name+' '+Middle_Name AS [Full name], TaskAssign FROM tblUser WHERE Last_Name=@ln";
-            cmd.Parameters.AddWithValue("ln", txt_search.Text);
+            string Show = "SELECT UID, Full_Name, TaskAssign FROM tblUser WHERE UID=@uid";
+            cmd.Parameters.AddWithValue("uid", txt_search.Text);
+            cmd.CommandText = Show;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            GridTask.DataSource = dt;
+
+            conn.Close();
+
+            cmd.Parameters.Clear();
+        }
+
+        public void taskSearchFullName()
+        {
+            conn.Open();
+            cmd.Connection = conn;
+            string Show = "SELECT UID, Full_Name TaskAssign FROM tblUser WHERE Full_Name=@fn";
+            cmd.Parameters.AddWithValue("fn", txt_search.Text);
             cmd.CommandText = Show;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -117,9 +136,15 @@ namespace RVL_Management_System
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            uID = txt_uid.Text;
-            taskAssign = cBoxTask.Text;
-            Class.Cls_cmd.taskAssign();
+            if (txt_name.Text == string.Empty || txt_uid.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Please select an employee to assign a task.", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            else {
+                uID = txt_uid.Text;
+                taskAssign = cBoxTask.Text;
+                Class.Cls_cmd.taskAssign();
+            }
         }
 
         private void metroLink1_Click(object sender, EventArgs e)
@@ -138,8 +163,21 @@ namespace RVL_Management_System
 
         private void txt_search_ButtonClick(object sender, EventArgs e)
         {
-            taskSearch();
-
+            if (cBoxSearchBy.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Please select a category to search on.", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (cBoxSearchBy.Text == "User ID")
+                {
+                    taskSearchID();
+                }
+                else if (cBoxSearchBy.Text == "Full name")
+                {
+                    taskSearchFullName();
+                }
+            }
         }
     }
 }

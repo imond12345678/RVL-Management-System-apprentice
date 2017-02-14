@@ -124,23 +124,30 @@ namespace RVL_Management_System.Forms
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to save these Informations?", "RVL Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (cBoxBilled.Text == string.Empty || txt_billedTo.Text == string.Empty || txt_amount.Text == string.Empty || txt_notes.Text == string.Empty)
             {
-                account = cBoxAccount.Text;
-                billedFrom = cBoxBilled.Text;
-                billedTo = txt_billedTo.Text;
-                memo = txt_memo.Text;
-                amount = txt_amount.Text;
-                dateRecorded = dtDateRecorded.Text;
-                notes = txt_notes.Text;
-                total = lbl_amount.Text;
-                Class.Cls_cmd.accountingPersonalAdd();
-                clear();
+                MetroMessageBox.Show(this, "Please fill up the required fields! - Billed From, Billed To, Amount, Notes");
             }
             else
             {
-                //IF NO
-                //TODO: NOTHING 
+                if (MetroMessageBox.Show(this, "Do you want to save these Informations?", "RVL Management System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    account = cBoxAccount.Text;
+                    billedFrom = cBoxBilled.Text;
+                    billedTo = txt_billedTo.Text;
+                    memo = txt_memo.Text;
+                    amount = txt_amount.Text;
+                    dateRecorded = dtDateRecorded.Text;
+                    notes = txt_notes.Text;
+                    total = lbl_amount.Text;
+                    Class.Cls_cmd.accountingPersonalAdd();
+                    clear();
+                }
+                else
+                {
+                    //IF NO
+                    //TODO: NOTHING 
+                }
             }
         }
 

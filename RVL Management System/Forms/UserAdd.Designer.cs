@@ -369,6 +369,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_UserAdd";
+            this.Resizable = false;
             this.Text = "Add User Information";
             this.Load += new System.EventHandler(this.Frm_UserAdd_Load);
             this.GroupBox1.ResumeLayout(false);

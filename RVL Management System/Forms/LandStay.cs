@@ -271,32 +271,7 @@ namespace RVL_Management_System.Forms
 
         private void btn_update_Click_1(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to update these Information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                lsid = lbl_lsid.Text;
-                sellerUpdate = txt_sellerUpdate.Text;
-                phoneUpdate = txt_phoneUpdate.Text;
-                sellerEmailUpdate = txt_sellerEmailUpdate.Text;
-                sellerNotesUpdate = txt_sellerNotesUpdate.Text;
-                sellerNameUpdate = txt_sellerNameUpdate.Text;
-                availabilityUpdate = cBoxAvailabilityUpdate.Text;
-                stateUpdate = txt_stateUpdate.Text;
-                countyUpdate = txt_countyUpdate.Text;
-                APNUpdate = txt_apnUpdate.Text;
-                acresUpdate = txt_acresUpdate.Text;
-                legalUpdate = txt_legalUpdate.Text;
-                gpsUpdate = txt_gpsUpdate.Text;
-                priceUpdate = txt_priceUpdate.Text;
-                contactOrCheckoutUpdate = txt_contactOrCheckoutUpdate.Text;
-                Class.Cls_cmd.landStayUpdate();
-                loadDataUpdate();
-                clearUpdate();
-            }
-            else
-            {
-                //IF NO
-                //TODO:NOTHING
-            }
+           
         }
 
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
@@ -405,7 +380,6 @@ namespace RVL_Management_System.Forms
 
         private void btn_clearUpdate_Click(object sender, EventArgs e)
         {
-            clearUpdate();
         }
 
         private void txt_search_TextChanged(object sender, EventArgs e)
@@ -485,16 +459,59 @@ namespace RVL_Management_System.Forms
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (txt_searchDelete.Text == string.Empty)
+            if (lbl_lsidDelete.Text == string.Empty)
             {
-                MetroMessageBox.Show(this, "Please select an information to delete.", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "No data to delete!", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
-                if (MetroMessageBox.Show(this, "Do you want to delete these information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (txt_searchDelete.Text == string.Empty)
                 {
-                    lsidDelete = lbl_lsidDelete.Text;
-                    Class.Cls_cmd.LandStayDelete();
+                    MetroMessageBox.Show(this, "Please search an information to delete.", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (MetroMessageBox.Show(this, "Do you want to delete these information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        lsidDelete = lbl_lsidDelete.Text;
+                        Class.Cls_cmd.LandStayDelete();
+                    }
+                    else
+                    {
+                        //IF NO
+                        //TODO:NOTHING
+                    }
+                }
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (txt_seller.Text == string.Empty || txt_phone.Text == string.Empty || txt_sellerEmail.Text == string.Empty || txt_sellerNotes.Text == string.Empty || txt_sellerName.Text == string.Empty || cBoxAvailability.Text == string.Empty || txt_state.Text == string.Empty || txt_county.Text == string.Empty || txt_apn.Text == string.Empty || txt_acres.Text == string.Empty || txt_legal.Text == string.Empty || txt_legal.Text == string.Empty || txt_price.Text == string.Empty ||txt_contactOrCheckout.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Please fill-up the required fields - Seller, Phone, Seller Email, Seller Notes, Seller Name, Availability, State, county, APN, acres, legal, GPS, Contact or Checkout", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MetroMessageBox.Show(this, "Do you want to add these Information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    seller = txt_seller.Text;
+                    phone = txt_phone.Text;
+                    sellerEmail = txt_sellerEmail.Text;
+                    sellerNotes = txt_sellerNotes.Text;
+                    sellerName = txt_sellerName.Text;
+                    availability = cBoxAvailability.Text;
+                    state = txt_state.Text;
+                    county = txt_county.Text;
+                    APN = txt_apn.Text;
+                    acres = txt_acres.Text;
+                    legal = txt_legal.Text;
+                    gps = txt_gps.Text;
+                    price = txt_price.Text;
+                    contactOrCheckout = txt_contactOrCheckout.Text;
+                    Class.Cls_cmd.landStayAdd();
+                    loadData();
+                    clear();
                 }
                 else
                 {
@@ -504,32 +521,124 @@ namespace RVL_Management_System.Forms
             }
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void metroTile2_Click(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to add these Information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (lbl_lsid.Text == string.Empty)
             {
-                seller = txt_seller.Text;
-                phone = txt_phone.Text;
-                sellerEmail = txt_sellerEmail.Text;
-                sellerNotes = txt_sellerNotes.Text;
-                sellerName = txt_sellerName.Text;
-                availability = cBoxAvailability.Text;
-                state = txt_state.Text;
-                county = txt_county.Text;
-                APN = txt_apn.Text;
-                acres = txt_acres.Text;
-                legal = txt_legal.Text;
-                gps = txt_gps.Text;
-                price = txt_price.Text;
-                contactOrCheckout = txt_contactOrCheckout.Text;
-                Class.Cls_cmd.landStayAdd();
-                loadData();
-                clear();
+                MetroMessageBox.Show(this, "Please Search first before you update.", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
-                //IF NO
-                //TODO:NOTHING
+                if (MetroMessageBox.Show(this, "Do you want to update these Information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    lsid = lbl_lsid.Text;
+                    sellerUpdate = txt_sellerUpdate.Text;
+                    phoneUpdate = txt_phoneUpdate.Text;
+                    sellerEmailUpdate = txt_sellerEmailUpdate.Text;
+                    sellerNotesUpdate = txt_sellerNotesUpdate.Text;
+                    sellerNameUpdate = txt_sellerNameUpdate.Text;
+                    availabilityUpdate = cBoxAvailabilityUpdate.Text;
+                    stateUpdate = txt_stateUpdate.Text;
+                    countyUpdate = txt_countyUpdate.Text;
+                    APNUpdate = txt_apnUpdate.Text;
+                    acresUpdate = txt_acresUpdate.Text;
+                    legalUpdate = txt_legalUpdate.Text;
+                    gpsUpdate = txt_gpsUpdate.Text;
+                    priceUpdate = txt_priceUpdate.Text;
+                    contactOrCheckoutUpdate = txt_contactOrCheckoutUpdate.Text;
+                    Class.Cls_cmd.landStayUpdate();
+                    loadDataUpdate();
+                    clearUpdate();
+                }
+                else
+                {
+                    //IF NO
+                    //TODO:NOTHING
+                }
+            }
+            
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            clearUpdate();
+
+        }
+
+        private void btn_clear_Click_2(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_seller_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_sellerEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_sellerNotes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_sellerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_state_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_county_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_apn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

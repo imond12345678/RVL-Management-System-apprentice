@@ -156,35 +156,50 @@ namespace RVL_Management_System.Forms
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            apnID = txt_apn.Text;
-            dateListed = dtDateListed.Text;
-            originalPrice = txt_originalPrice.Text;
-            currentMarketValue = txt_currentMarketValue.Text;
-            updatedPrice = txt_updatedPrice.Text;
-            imageNo = txt_imageNo.Text;
-            title = txt_title.Text;
-            videoPropertyLink = txt_videoProperty.Text;
-            buyersEmail = txt_buyerEmail.Text;
-            buyersPhoneNumber = txt_buyerPhoneNumber.Text;
-            notesForTheTerms = txt_notesForTheTerm.Text;
-            urlDeeds = txt_urlDeeds.Text;
-            status = txt_status.Text;
-            urlStampDeeds = txt_urlStamp.Text;
-            county = txt_county.Text;
-            soldToLandBuyer = txt_soldTo.Text;
-            paymentTerms = txt_paymentTerms.Text;
-            gpsUrlLink = txt_gpsUrl.Text;
-            gpsCoordinates = txt_gpsCoordinates.Text;
-            urlLinkSocialMedia = txt_urlLinkForSocialMedia.Text;
-            termsAndConditions = txt_termsAndConditions.Text;
-            additionalNotes = txt_additionalNotes.Text;
-            urlMoonClerk = txt_urlMoonclerk.Text;
-            currentStatus = cBoxCurrentStatus.Text;
-            landsSoldSite = cBoxLandsSoldSite.Text;
-            dateSold = dtDateSold.Text;
-            currentOwner = cBoxLandOwner.Text;
-            paymentRemarks = cBoxPaymentRemarks.Text;
-            Class.Cls_cmd.propertyInventoryAdd();
+            if (txt_apn.Text==string.Empty || txt_originalPrice.Text == string.Empty || txt_currentMarketValue.Text == string.Empty || txt_updatedPrice.Text == string.Empty || txt_imageNo.Text == string.Empty || txt_title.Text == string.Empty || txt_videoProperty.Text == string.Empty || txt_buyerEmail.Text == string.Empty || txt_buyerPhoneNumber.Text == string.Empty || txt_notesForTheTerm.Text == string.Empty || txt_urlDeeds.Text == string.Empty || txt_status.Text == string.Empty || txt_urlStamp.Text == string.Empty || txt_county.Text == string.Empty || txt_soldTo.Text == string.Empty || txt_paymentTerms.Text == string.Empty || txt_gpsUrl.Text == string.Empty || txt_gpsCoordinates.Text == string.Empty || txt_urlLinkForSocialMedia.Text == string.Empty || txt_termsAndConditions.Text == string.Empty || txt_additionalNotes.Text == string.Empty || txt_urlMoonclerk.Text == string.Empty || cBoxCurrentStatus.Text == string.Empty || cBoxLandsSoldSite.Text == string.Empty || cBoxLandOwner.Text == string.Empty || cBoxPaymentRemarks.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Please fill up the required fields - APN ID, Original Price, Current Market Value, Updated Price, Image No, Title, Video property link, Buyer's Email, Buyer's Phone Number, Notes for the terms, URL Deeds, Status, URL - Stamp Deeds, County, Sold to- Land buyer, Payment Terms, GPS URL link, GPS Coordinates, URL link for each social media, Terms and Conditions, Additional Notes, URL - Moonclerk form or strope - Upon Purchase of the land, Current Status, Lands Sold Site, Current Owner of the Land, Payments Remarks", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MetroMessageBox.Show(this, "Do you want to save this Information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    apnID = txt_apn.Text;
+                    dateListed = dtDateListed.Text;
+                    originalPrice = txt_originalPrice.Text;
+                    currentMarketValue = txt_currentMarketValue.Text;
+                    updatedPrice = txt_updatedPrice.Text;
+                    imageNo = txt_imageNo.Text;
+                    title = txt_title.Text;
+                    videoPropertyLink = txt_videoProperty.Text;
+                    buyersEmail = txt_buyerEmail.Text;
+                    buyersPhoneNumber = txt_buyerPhoneNumber.Text;
+                    notesForTheTerms = txt_notesForTheTerm.Text;
+                    urlDeeds = txt_urlDeeds.Text;
+                    status = txt_status.Text;
+                    urlStampDeeds = txt_urlStamp.Text;
+                    county = txt_county.Text;
+                    soldToLandBuyer = txt_soldTo.Text;
+                    paymentTerms = txt_paymentTerms.Text;
+                    gpsUrlLink = txt_gpsUrl.Text;
+                    gpsCoordinates = txt_gpsCoordinates.Text;
+                    urlLinkSocialMedia = txt_urlLinkForSocialMedia.Text;
+                    termsAndConditions = txt_termsAndConditions.Text;
+                    additionalNotes = txt_additionalNotes.Text;
+                    urlMoonClerk = txt_urlMoonclerk.Text;
+                    currentStatus = cBoxCurrentStatus.Text;
+                    landsSoldSite = cBoxLandsSoldSite.Text;
+                    dateSold = dtDateSold.Text;
+                    currentOwner = cBoxLandOwner.Text;
+                    paymentRemarks = cBoxPaymentRemarks.Text;
+                    Class.Cls_cmd.propertyInventoryAdd();
+                }
+                else
+                {
+                    //IF NO
+                    //TODO: NOTHING
+                }
+            }
         }
 
         private void btn_clear_Click_1(object sender, EventArgs e)

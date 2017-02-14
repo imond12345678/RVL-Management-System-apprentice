@@ -82,5 +82,10 @@ namespace RVL_Management_System.Forms
         {
             clear();
         }
+
+        private void txt_fullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

@@ -67,9 +67,7 @@
             this.txt_fullName.MaxLength = 32767;
             this.txt_fullName.Name = "txt_fullName";
             this.txt_fullName.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
             this.txt_fullName.PromptText = "Full name";
-#pragma warning restore CS0618 // Type or member is obsolete
             this.txt_fullName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txt_fullName.SelectedText = "";
             this.txt_fullName.SelectionLength = 0;
@@ -81,6 +79,7 @@
             this.txt_fullName.WaterMark = "Full name";
             this.txt_fullName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_fullName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_fullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fullName_KeyPress);
             // 
             // txt_email
             // 
