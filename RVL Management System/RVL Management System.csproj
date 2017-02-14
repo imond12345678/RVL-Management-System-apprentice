@@ -88,13 +88,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MetroFramework">
-      <HintPath>..\..\..\..\Documents\RVL - FILES\Metro-master\metroframework-modern-ui-master\MetroFramework.Design\bin\Release\MetroFramework.dll</HintPath>
+      <HintPath>H:\Projects\metroframework-modern-ui-master\MetroFramework.Design\bin\Release\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Design">
-      <HintPath>D:\metroframework-modern-ui-master\MetroFramework.Design\bin\Release\MetroFramework.Design.dll</HintPath>
+      <HintPath>H:\Projects\metroframework-modern-ui-master\MetroFramework.Design\bin\Release\MetroFramework.Design.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Fonts">
-      <HintPath>..\..\..\..\Documents\RVL - FILES\Metro-master\metroframework-modern-ui-master\MetroFramework.Fonts\bin\Release\MetroFramework.Fonts.dll</HintPath>
+      <HintPath>H:\Projects\metroframework-modern-ui-master\MetroFramework.Fonts\bin\Release\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="MimeKit, Version=1.10.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeKit.1.10.0\lib\net451\MimeKit.dll</HintPath>

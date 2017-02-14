@@ -256,31 +256,7 @@ namespace RVL_Management_System.Forms
 
         private void btn_add_Click_1(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to add these Information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                seller = txt_seller.Text;
-                phone = txt_phone.Text;
-                sellerEmail = txt_sellerEmail.Text;
-                sellerNotes = txt_sellerNotes.Text;
-                sellerName = txt_sellerName.Text;
-                availability = cBoxAvailability.Text;
-                state = txt_state.Text;
-                county = txt_county.Text;
-                APN = txt_apn.Text;
-                acres = txt_acres.Text;
-                legal = txt_legal.Text;
-                gps = txt_gps.Text;
-                price = txt_price.Text;
-                contactOrCheckout = txt_contactOrCheckout.Text;
-                Class.Cls_cmd.landStayAdd();
-                loadData();
-                clear();
-            }
-            else
-            {
-                //IF NO
-                //TODO:NOTHING
-            }
+            
         }
 
         private void btn_clear_Click_1(object sender, EventArgs e)
@@ -525,6 +501,35 @@ namespace RVL_Management_System.Forms
                     //IF NO
                     //TODO:NOTHING
                 }
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (MetroMessageBox.Show(this, "Do you want to add these Information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                seller = txt_seller.Text;
+                phone = txt_phone.Text;
+                sellerEmail = txt_sellerEmail.Text;
+                sellerNotes = txt_sellerNotes.Text;
+                sellerName = txt_sellerName.Text;
+                availability = cBoxAvailability.Text;
+                state = txt_state.Text;
+                county = txt_county.Text;
+                APN = txt_apn.Text;
+                acres = txt_acres.Text;
+                legal = txt_legal.Text;
+                gps = txt_gps.Text;
+                price = txt_price.Text;
+                contactOrCheckout = txt_contactOrCheckout.Text;
+                Class.Cls_cmd.landStayAdd();
+                loadData();
+                clear();
+            }
+            else
+            {
+                //IF NO
+                //TODO:NOTHING
             }
         }
     }
