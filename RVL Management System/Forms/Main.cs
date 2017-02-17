@@ -216,5 +216,11 @@ namespace RVL_Management_System.Forms
             MarketingView view = new MarketingView();
             view.ShowDialog();
         }
+
+        private void btn_UserDelete_Click(object sender, EventArgs e)
+        {
+            UserDelete delete = new UserDelete();
+            delete.ShowDialog();
+        }
     }
 }

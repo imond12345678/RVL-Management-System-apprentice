@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.TabControlMain = new MetroFramework.Controls.MetroTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_UserDelete = new MetroFramework.Controls.MetroTile();
             this.btn_viewUser = new MetroFramework.Controls.MetroTile();
             this.btn_editUser = new MetroFramework.Controls.MetroTile();
             this.btn_addUser = new MetroFramework.Controls.MetroTile();
@@ -74,6 +75,7 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbl_name = new System.Windows.Forms.ToolStripStatusLabel();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.metroTile9 = new MetroFramework.Controls.MetroTile();
             this.TabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -101,13 +103,14 @@
             this.TabControlMain.Controls.Add(this.tabPage8);
             this.TabControlMain.Location = new System.Drawing.Point(23, 148);
             this.TabControlMain.Name = "TabControlMain";
-            this.TabControlMain.SelectedIndex = 1;
+            this.TabControlMain.SelectedIndex = 4;
             this.TabControlMain.Size = new System.Drawing.Size(865, 226);
             this.TabControlMain.TabIndex = 0;
             this.TabControlMain.UseSelectable = true;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_UserDelete);
             this.tabPage1.Controls.Add(this.btn_viewUser);
             this.tabPage1.Controls.Add(this.btn_editUser);
             this.tabPage1.Controls.Add(this.btn_addUser);
@@ -116,6 +119,21 @@
             this.tabPage1.Size = new System.Drawing.Size(857, 184);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User Information";
+            // 
+            // btn_UserDelete
+            // 
+            this.btn_UserDelete.ActiveControl = null;
+            this.btn_UserDelete.Location = new System.Drawing.Point(426, 47);
+            this.btn_UserDelete.Name = "btn_UserDelete";
+            this.btn_UserDelete.Size = new System.Drawing.Size(124, 102);
+            this.btn_UserDelete.TabIndex = 4;
+            this.btn_UserDelete.Text = "User Delete";
+            this.btn_UserDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_UserDelete.TileImage = global::RVL_Management_System.Properties.Resources.user_1;
+            this.btn_UserDelete.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_UserDelete.UseSelectable = true;
+            this.btn_UserDelete.UseTileImage = true;
+            this.btn_UserDelete.Click += new System.EventHandler(this.btn_UserDelete_Click);
             // 
             // btn_viewUser
             // 
@@ -396,6 +414,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.metroTile9);
             this.tabPage5.Controls.Add(this.metroTile8);
             this.tabPage5.Controls.Add(this.btn_businessPersonal);
             this.tabPage5.Controls.Add(this.btn_accountingBusiness);
@@ -408,7 +427,7 @@
             // metroTile8
             // 
             this.metroTile8.ActiveControl = null;
-            this.metroTile8.Location = new System.Drawing.Point(515, 41);
+            this.metroTile8.Location = new System.Drawing.Point(414, 41);
             this.metroTile8.Name = "metroTile8";
             this.metroTile8.Size = new System.Drawing.Size(132, 102);
             this.metroTile8.TabIndex = 11;
@@ -423,7 +442,7 @@
             // btn_businessPersonal
             // 
             this.btn_businessPersonal.ActiveControl = null;
-            this.btn_businessPersonal.Location = new System.Drawing.Point(386, 41);
+            this.btn_businessPersonal.Location = new System.Drawing.Point(285, 41);
             this.btn_businessPersonal.Name = "btn_businessPersonal";
             this.btn_businessPersonal.Size = new System.Drawing.Size(124, 102);
             this.btn_businessPersonal.TabIndex = 10;
@@ -438,7 +457,7 @@
             // btn_accountingBusiness
             // 
             this.btn_accountingBusiness.ActiveControl = null;
-            this.btn_accountingBusiness.Location = new System.Drawing.Point(257, 41);
+            this.btn_accountingBusiness.Location = new System.Drawing.Point(156, 41);
             this.btn_accountingBusiness.Name = "btn_accountingBusiness";
             this.btn_accountingBusiness.Size = new System.Drawing.Size(124, 102);
             this.btn_accountingBusiness.TabIndex = 9;
@@ -685,6 +704,20 @@
             this.metroTile4.UseTileImage = true;
             this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click_1);
             // 
+            // metroTile9
+            // 
+            this.metroTile9.ActiveControl = null;
+            this.metroTile9.Location = new System.Drawing.Point(552, 41);
+            this.metroTile9.Name = "metroTile9";
+            this.metroTile9.Size = new System.Drawing.Size(166, 102);
+            this.metroTile9.TabIndex = 12;
+            this.metroTile9.Text = "Property InventoryDelete";
+            this.metroTile9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile9.TileImage = global::RVL_Management_System.Properties.Resources.bag;
+            this.metroTile9.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.metroTile9.UseSelectable = true;
+            this.metroTile9.UseTileImage = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,5 +795,7 @@
         private MetroFramework.Controls.MetroTile metroTile6;
         private MetroFramework.Controls.MetroTile metroTile7;
         private MetroFramework.Controls.MetroTile metroTile8;
+        private MetroFramework.Controls.MetroTile btn_UserDelete;
+        private MetroFramework.Controls.MetroTile metroTile9;
     }
 }

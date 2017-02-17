@@ -43,6 +43,44 @@ namespace RVL_Management_System.Forms
             cmd.Parameters.Clear();
         }
 
+        public void searchProcess()
+        {
+            conn.Open();
+            cmd.Connection = conn;
+            string LOAD = "SELECT * FROM tblVideoTutorial WHERE Process = @process";
+            cmd.Parameters.AddWithValue("process", txt_search.Text);
+            cmd.CommandText = LOAD;
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            GridView.DataSource = dt;
+
+            conn.Close();
+
+            cmd.Parameters.Clear();
+        }
+
+        public void searchvideoID()
+        {
+            conn.Open();
+            cmd.Connection = conn;
+            string LOAD = "SELECT * FROM tblVideoTutorial WHERE VID = @vid";
+            cmd.Parameters.AddWithValue("vid", txt_search.Text);
+            cmd.CommandText = LOAD;
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            GridView.DataSource = dt;
+
+            conn.Close();
+
+            cmd.Parameters.Clear();
+        }
+
         private void Frm_VideoTutorialsView_Load(object sender, EventArgs e)
         {
             loadData();
@@ -51,6 +89,23 @@ namespace RVL_Management_System.Forms
         private void btn_export_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void txt_search_ButtonClick(object sender, EventArgs e)
+        {
+            if (cBoxSearchBy.Text == "VID")
+            {
+                searchvideoID();
+            }
+            else if (cBoxSearchBy.Text == "Process")
+            {
+                searchProcess();
+            }
+        }
+
+        private void txt_search_ClearClicked()
+        {
+            cBoxSearchBy.Text = null;
         }
     }
 }

@@ -957,5 +957,27 @@ namespace RVL_Management_System.Class
 
             cmd.Parameters.Clear();
         }
+
+        public static void socialMediaDelete()
+        {
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+            SocialMediaDelete _owner = new SocialMediaDelete();
+
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
+            conn.Open();
+
+            cmd.Connection = conn;
+            string DELETE = "DELETE tblSocialMedia WHERE APN_ID = @apnid";
+            cmd.Parameters.AddWithValue("apnid", SocialMediaDelete.apn);
+            cmd.CommandText = DELETE;
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+            MetroMessageBox.Show(_owner, "Successfully deleted these Video Tutorials Information.", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cmd.Parameters.Clear();
+        }
     }
 }

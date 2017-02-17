@@ -370,7 +370,7 @@
             this.txt_search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txt_search.CustomButton.UseSelectable = true;
             this.txt_search.Lines = new string[0];
-            this.txt_search.Location = new System.Drawing.Point(217, 41);
+            this.txt_search.Location = new System.Drawing.Point(175, 41);
             this.txt_search.MaxLength = 32767;
             this.txt_search.Name = "txt_search";
             this.txt_search.PasswordChar = '\0';

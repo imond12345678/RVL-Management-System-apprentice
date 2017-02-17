@@ -117,5 +117,10 @@ namespace RVL_Management_System.Forms
                 txt_lid.Text = row.Cells[1].Value.ToString();
             }
         }
+
+        private void cBoxSearchBy_TextChanged(object sender, EventArgs e)
+        {
+            txt_search.Text = null;
+        }
     }
 }
