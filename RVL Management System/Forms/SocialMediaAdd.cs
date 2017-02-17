@@ -87,7 +87,7 @@ namespace RVL_Management_System.Forms
         {
             if(txt_apn.Text == string.Empty || txt_current.Text == string.Empty || txt_updatePrice.Text == string.Empty || txt_title.Text == string.Empty || txt_socialmedia.Text == string.Empty || txt_hashtags.Text == string.Empty || txt_schedule.Text == string.Empty || cBoxPreApproved.Text == string.Empty || cBoxStatus.Text == string.Empty || txt_addiotnalNotes.Text == string.Empty)
             {
-                MetroMessageBox.Show(this,"Please fill up the required fields","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MetroMessageBox.Show(this,"Please fill up the required fields - APN ID, Current Market Value, Updated Price, Title, Social Media Notes, Hashtags to use, Schedule to posted, Pre-Approved, Status, Additional Notes.","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {

@@ -149,17 +149,21 @@ namespace RVL_Management_System.Forms
 
         private void txt_search_ButtonClick(object sender, EventArgs e)
         {
-          
+
             if (cBoxSearchBy.Text == string.Empty)
             {
                 MetroMessageBox.Show(this, "Search the APN ID or Title you want to update!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(cBoxSearchBy.Text != string.Empty)
+            else if (txt_search.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Please fill up the required field - Search", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cBoxSearchBy.Text != string.Empty)
             {
                 if (cBoxSearchBy.Text == "APN ID")
                 {
                     searchAPN();
-                    
+
                 }
                 else if (cBoxSearchBy.Text == "Title")
                 {
@@ -169,9 +173,9 @@ namespace RVL_Management_System.Forms
             }
             else
             {
-                
 
-                
+
+
             }
         }
 

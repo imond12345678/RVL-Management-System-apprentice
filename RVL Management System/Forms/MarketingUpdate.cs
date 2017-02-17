@@ -17,6 +17,7 @@ namespace RVL_Management_System.Forms
 {
     public partial class MarketingUpdate : MetroForm
     {
+        public static string leadID = "";
         public static string leadReceived = "";
         public static string lastName = "";
         public static string firstName = "";
@@ -256,29 +257,36 @@ namespace RVL_Management_System.Forms
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to update this information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (txt_ln.Text == string.Empty || txt_fn.Text == string.Empty || txt_mn.Text == string.Empty || txt_pnum.Text == string.Empty || txt_email.Text == string.Empty || txt_IssueDes.Text == string.Empty || cBoxLeadSource.Text == string.Empty || cBoxLeadStats.Text == string.Empty || txt_others.Text == string.Empty || cBoxPriority.Text == string.Empty || txt_memo.Text == string.Empty || cBoxLeadFollowUp.Text == string.Empty || cBoxLeadAssesment.Text == string.Empty || cBoxLeadAssigned.Text == string.Empty)
             {
-                leadReceived = dtLeadReceived.Text;
-                lastName = txt_ln.Text;
-                firstName = txt_fn.Text;
-                middleName = txt_mn.Text;
-                phoneNumber = txt_pnum.Text;
-                emailAddress = txt_email.Text;
-                issueDescription = txt_IssueDes.Text;
-                leadSource = cBoxLeadSource.Text;
-                leadStat = cBoxLeadStats.Text;
-                other = txt_others.Text;
-                priority = cBoxPriority.Text;
-                leadFollow = cBoxLeadFollowUp.Text;
-                leadAssesment = cBoxLeadAssesment.Text;
-                leadAssigned = cBoxLeadAssigned.Text;
-                memo = txt_memo.Text;
-                Class.Cls_cmd.marketingUpdate();
-                loadData();
+                MetroMessageBox.Show(this, "Please fill up the required fields - Last Name, First Name, Middle Name, Phone Number, Email Address, Call/Issue Description, Lead Source, Lead Status Result, Others, Priority, Lead FOllow up Status, Lead Assesment, Memo, Lead Assigned To", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else
             {
-                //TODO: NOTHING
+                if (MetroMessageBox.Show(this, "Do you want to update this information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    leadReceived = dtLeadReceived.Text;
+                    lastName = txt_ln.Text;
+                    firstName = txt_fn.Text;
+                    middleName = txt_mn.Text;
+                    phoneNumber = txt_pnum.Text;
+                    emailAddress = txt_email.Text;
+                    issueDescription = txt_IssueDes.Text;
+                    leadSource = cBoxLeadSource.Text;
+                    leadStat = cBoxLeadStats.Text;
+                    other = txt_others.Text;
+                    priority = cBoxPriority.Text;
+                    leadFollow = cBoxLeadFollowUp.Text;
+                    leadAssesment = cBoxLeadAssesment.Text;
+                    leadAssigned = cBoxLeadAssigned.Text;
+                    memo = txt_memo.Text;
+                    Class.Cls_cmd.marketingUpdate();
+                    loadData();
+                }
+                else
+                {
+                    //TODO: NOTHING
+                }
             }
         }
 

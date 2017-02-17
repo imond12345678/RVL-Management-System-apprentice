@@ -64,7 +64,7 @@ namespace RVL_Management_System.Forms
         {
             if (txt_apn.Text == string.Empty || txt_county.Text == string.Empty || txt_origPrice.Text == string.Empty || txt_marketPrice.Text == string.Empty || cBoxStatus.Text == string.Empty || cBoxTypeOfSale.Text == string.Empty || txt_downPaymentMade.Text == string.Empty || txt_monthlyPaymentMade.Text == string.Empty || txt_paymentPaidSoFar.Text == string.Empty || txt_amountClosed.Text == string.Empty)
             {
-                MetroMessageBox.Show(this,"PLease complete the required field","RVL System",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MetroMessageBox.Show(this,"Please complete the required fields - APN, County, Original Price, Market PRice, Status of the Land, Type of Sale, Down payment made, Monthly payment made, Payment Paid so far, Amount closed","RVL System",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {

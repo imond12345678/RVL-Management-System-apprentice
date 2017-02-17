@@ -31,6 +31,7 @@ namespace RVL_Management_System.Forms
             SmtpClient SmtpServer = new SmtpClient(txt_smtp.Text);
             mail.From = new MailAddress(txt_email.Text, txt_nameFrom.Text);
             mail.To.Add(txt_to.Text);
+            mail.Bcc.Add(txt_cc.Text);
             mail.Subject = txt_subject.Text;
             mail.Body = txt_content.Text;
 
@@ -75,9 +76,9 @@ namespace RVL_Management_System.Forms
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (txt_to.Text == string.Empty || txt_cc.Text == string.Empty || txt_subject.Text == string.Empty || txt_content.Text == string.Empty || txt_attachments.Text == string.Empty)
+            if (txt_to.Text == string.Empty || txt_cc.Text == string.Empty || txt_subject.Text == string.Empty || txt_content.Text == string.Empty)
             {
-                MetroMessageBox.Show(this,"Please complete all the required field","RVL System",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MetroMessageBox.Show(this,"Please complete all the required field - To, CC, Subject, Content","RVL System",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {

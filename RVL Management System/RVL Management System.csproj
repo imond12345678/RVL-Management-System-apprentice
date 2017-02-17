@@ -183,11 +183,29 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PropertyAccountingBusinessView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PropertyAccountingBusinessView.Designer.cs">
+      <DependentUpon>PropertyAccountingBusinessView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SocialMediaDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SocialMediaDelete.Designer.cs">
+      <DependentUpon>SocialMediaDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SocialMediaExport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SocialMediaExport.Designer.cs">
       <DependentUpon>SocialMediaExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserDelete.Designer.cs">
+      <DependentUpon>UserDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserMenu.cs">
       <SubType>Form</SubType>
@@ -509,8 +527,17 @@
     <EmbeddedResource Include="Forms\MarketingView.resx">
       <DependentUpon>MarketingView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PropertyAccountingBusinessView.resx">
+      <DependentUpon>PropertyAccountingBusinessView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SocialMediaDelete.resx">
+      <DependentUpon>SocialMediaDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SocialMediaExport.resx">
       <DependentUpon>SocialMediaExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserDelete.resx">
+      <DependentUpon>UserDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserMenu.resx">
       <DependentUpon>UserMenu.cs</DependentUpon>

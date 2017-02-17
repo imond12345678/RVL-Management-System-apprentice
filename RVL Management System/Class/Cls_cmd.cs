@@ -832,6 +832,48 @@ namespace RVL_Management_System.Class
             cmd.Parameters.Clear();
         }
 
+        public static void UserDelete()
+        {
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
+            conn.Open();
+
+            cmd.Connection = conn;
+            string DELETE = "DELETE tblUser WHERE UID = @uid";
+            cmd.Parameters.AddWithValue("uid", Forms.UserDelete.uid);
+            cmd.CommandText = DELETE;
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            cmd.Parameters.Clear();
+        }
+
+        public static void LoginDelete()
+        {
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+            UserDelete _owner = new UserDelete();
+
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
+            conn.Open();
+
+            cmd.Connection = conn;
+            string DELETE = "DELETE tblLogin WHERE LID = @lid";
+            cmd.Parameters.AddWithValue("lid", Forms.UserDelete.lid);
+            cmd.CommandText = DELETE;
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+            MetroMessageBox.Show(_owner, "Successfully deleted these User Information.", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cmd.Parameters.Clear();
+        }
+
         public static void companyDelete()
         {
             SqlConnection conn = new SqlConnection();

@@ -104,7 +104,7 @@
             this.txt_cc.Location = new System.Drawing.Point(97, 41);
             this.txt_cc.Name = "txt_cc";
             this.txt_cc.Size = new System.Drawing.Size(633, 21);
-            this.txt_cc.TabIndex = 19;
+            this.txt_cc.TabIndex = 14;
             // 
             // label8
             // 
@@ -221,7 +221,7 @@
             this.btn_send.Location = new System.Drawing.Point(552, 146);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(75, 27);
-            this.btn_send.TabIndex = 1;
+            this.btn_send.TabIndex = 17;
             this.btn_send.Text = "Send";
             this.btn_send.UseSelectable = true;
             this.btn_send.Click += new System.EventHandler(this.metroButton1_Click);
@@ -299,7 +299,7 @@
             this.txt_subject.Location = new System.Drawing.Point(97, 68);
             this.txt_subject.Name = "txt_subject";
             this.txt_subject.Size = new System.Drawing.Size(633, 21);
-            this.txt_subject.TabIndex = 14;
+            this.txt_subject.TabIndex = 15;
             // 
             // txt_content
             // 
@@ -307,7 +307,7 @@
             this.txt_content.Multiline = true;
             this.txt_content.Name = "txt_content";
             this.txt_content.Size = new System.Drawing.Size(631, 287);
-            this.txt_content.TabIndex = 15;
+            this.txt_content.TabIndex = 16;
             // 
             // label4
             // 

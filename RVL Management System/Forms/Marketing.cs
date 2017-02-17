@@ -238,7 +238,7 @@ namespace RVL_Management_System
         {
             if (txt_ln.Text == string.Empty || txt_fn.Text == string.Empty || txt_mn.Text == string.Empty || txt_pnum.Text == string.Empty || txt_email.Text == string.Empty || txt_IssueDes.Text == string.Empty || cBoxLeadSource.Text == string.Empty)
             {
-                MetroMessageBox.Show(this,"Please all required fields","RVL System",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MetroMessageBox.Show(this,"Please all required fields - Last Name, First Name, Middle Name, Phone Number, Email Address, Call/Issue Description, Lead Source, Lead Status Result, Others, Priority, Memo, Lead follow up status, Lead Assesment, Lead Assigned to","RVL System",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {

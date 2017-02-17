@@ -128,18 +128,24 @@ namespace RVL_Management_System.Forms
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to update these information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (txt_vid.Text == string.Empty)
             {
-                process = txt_process.Text;
-                link = txt_youtube.Text;
-                vid = txt_vid.Text;
-                Class.Cls_cmd.videoTutorialsUpdate();
-                clear();
+                MetroMessageBox.Show(this, "Please select a data to update!", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            else
-            {
-                //IF NO
-                //TODO:NOTHING
+            else {
+                if (MetroMessageBox.Show(this, "Do you want to update these information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    process = txt_process.Text;
+                    link = txt_youtube.Text;
+                    vid = txt_vid.Text;
+                    Class.Cls_cmd.videoTutorialsUpdate();
+                    clear();
+                }
+                else
+                {
+                    //IF NO
+                    //TODO:NOTHING
+                }
             }
         }
 

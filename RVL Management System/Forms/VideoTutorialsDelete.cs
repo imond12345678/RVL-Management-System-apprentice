@@ -141,17 +141,24 @@ namespace RVL_Management_System.Forms
 
         private void metroTextBox1_ButtonClick(object sender, EventArgs e)
         {
-            if (MetroMessageBox.Show(this, "Do you want to delete these informations?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (txt_vid.Text == string.Empty)
             {
-                vid = txt_vid.Text;
-                Class.Cls_cmd.videoTutorialsDelete();
-                clear();
-                refresh();
+                MetroMessageBox.Show(this, "Please select a data to delete", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
-                //IF NO
-                //TODO:NOTHING
+                if (MetroMessageBox.Show(this, "Do you want to delete these informations?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    vid = txt_vid.Text;
+                    Class.Cls_cmd.videoTutorialsDelete();
+                    clear();
+                    refresh();
+                }
+                else
+                {
+                    //IF NO
+                    //TODO:NOTHING
+                }
             }
         }
     }

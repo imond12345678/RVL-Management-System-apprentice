@@ -199,11 +199,11 @@ namespace RVL_Management_System
         {
             if(cBoxSearchBy.Text == string.Empty)
             {
-                MetroMessageBox.Show(this, "Choose you want to search", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "Please choose a query to search in the search by.", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(txt_search.Text == string.Empty)
             {
-                MetroMessageBox.Show(this,"Please enter you want to search","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MetroMessageBox.Show(this,"Please fill up the required field - Search","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
