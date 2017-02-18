@@ -9,30 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using MetroFramework;
-using System.Configuration;
 using System.Data.SqlClient;
-
+using System.Configuration;
 
 namespace RVL_Management_System.Forms
 {
-    public partial class PropertyInventoryDelete : MetroForm
+    public partial class LandsOwnedDeedAdventureDelete : MetroForm
     {
         SqlConnection conn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
-
-        public static string apnID = "";
-        public PropertyInventoryDelete()
+        public static string apn = "";
+        public LandsOwnedDeedAdventureDelete()
         {
             InitializeComponent();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
         }
 
-        public void searchAPN()
+        public void searchCounty()
         {
             conn.Open();
             cmd.Connection = conn;
-            string LOAD = "SELECT * FROM tblPropertyInventory WHERE APN_ID = @apnid";
-            cmd.Parameters.AddWithValue("apnid", txt_search.Text);
+            string LOAD = "SELECT * FROM DeedAdventure WHERE County = @county";
+            cmd.Parameters.AddWithValue("county", txt_search.Text);
             cmd.CommandText = LOAD;
             cmd.ExecuteNonQuery();
 
@@ -46,12 +44,12 @@ namespace RVL_Management_System.Forms
             cmd.Parameters.Clear();
         }
 
-        public void searchTitle()
+        public void searchAPN()
         {
             conn.Open();
             cmd.Connection = conn;
-            string LOAD = "SELECT * FROM tblPropertyInventory WHERE Title = @title";
-            cmd.Parameters.AddWithValue("title", txt_search.Text);
+            string LOAD = "SELECT * FROM DeedAdventure WHERE APN = @APN";
+            cmd.Parameters.AddWithValue("APN", txt_search.Text);
             cmd.CommandText = LOAD;
             cmd.ExecuteNonQuery();
 
@@ -69,7 +67,7 @@ namespace RVL_Management_System.Forms
         {
             conn.Open();
             cmd.Connection = conn;
-            string LOAD = "SELECT * FROM tblPropertyInventory";
+            string LOAD = "SELECT * FROM DeedAdventure WHERE County";
             cmd.CommandText = LOAD;
             cmd.ExecuteNonQuery();
 
@@ -84,12 +82,12 @@ namespace RVL_Management_System.Forms
         }
 
 
-        private void PropertyInventoryDelete_Load(object sender, EventArgs e)
+        private void LandsOwnedDeedAdventureDelete_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void GridView_SelectionChanged(object sender, EventArgs e)
+        private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in GridView.SelectedCells)
@@ -100,7 +98,7 @@ namespace RVL_Management_System.Forms
             if (cell != null)
             {
                 DataGridViewRow row = cell.OwningRow;
-                txt_apnID.Text = row.Cells[1].Value.ToString();
+                txt_apnID.Text = row.Cells[0].Value.ToString();
 
             }
         }
@@ -109,21 +107,13 @@ namespace RVL_Management_System.Forms
         {
             if (txt_apnID.Text == string.Empty)
             {
-                MetroMessageBox.Show(this,"Please select a data to delete!", "RVL System",MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MetroMessageBox.Show(this, "Please select a data to delete!", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             else
             {
-                if (MetroMessageBox.Show(this, "Do you want to delete this information?", "RVL System", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    apnID = txt_apnID.Text;
-                    Class.Cls_cmd.propertyInventoryDelete();
-                    refresh();
-                }
-                else
-                {
-                    //If no
-                    //TODO NOTHING
-                }
+                apn = txt_apnID.Text;
+                Class.Cls_cmd.deedAdventureDelete();
+                refresh();
             }
         }
 
@@ -131,7 +121,7 @@ namespace RVL_Management_System.Forms
         {
             if (cBoxSearchBy.Text == string.Empty)
             {
-                MetroMessageBox.Show(this,"Please select a category to search on.", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MetroMessageBox.Show(this, "Please search a category to search.", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             else
             {
@@ -139,9 +129,9 @@ namespace RVL_Management_System.Forms
                 {
                     searchAPN();
                 }
-                else if (cBoxSearchBy.Text == "Title")
+                else if (cBoxSearchBy.Text == "County")
                 {
-                    searchTitle();
+                    searchCounty();
                 }
             }
         }

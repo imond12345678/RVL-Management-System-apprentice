@@ -287,7 +287,7 @@ namespace RVL_Management_System
             }
             else if(cBoxSearchBy.Text == "Full Name")
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
                 {
                     e.Handled = true;
                 }

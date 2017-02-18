@@ -193,6 +193,7 @@ namespace RVL_Management_System.Forms
                     currentOwner = cBoxLandOwner.Text;
                     paymentRemarks = cBoxPaymentRemarks.Text;
                     Class.Cls_cmd.propertyInventoryAdd();
+                    clear();
                 }
                 else
                 {

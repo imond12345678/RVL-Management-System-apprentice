@@ -515,7 +515,7 @@ namespace RVL_Management_System.Class
             conn.Open();
 
             cmd.Connection = conn;
-            string INSERT = "INSERT INTO DeedAdventure(Date_Listed,APN_ID,Original_Price,Current_Market_Value,Updated_Price,Image_no,Title,URL_link_for_each_social_media,GPS_Coordinates,GPS_URL_Link,Video_Property_Link,Current_Status,Lands_Sold_Site,Date_Sold,Current_Owner_of_the_Land,Sold_To_Land_Buyer,Buyers_Email,Buyers_PhoneNumber,Terms_and_Conditions,Notes_for_the_Terms,Payment_Remarks,URL_Deeds,URL_Stamp_Deeds,URL_Moonclerk_Form,Status,County,Additional_Notes)VALUES(@dateListed,@apnID,@originalPrice,@currentMarketValue,@updatedPrice,@imageNo,@title,@urlLinkForEachSocialMedia,gpsCoordinates,@gpsUrlLink,@videoProperty,@currentStatus,@landsSoldSite,@dateSold,@currentOwnerOfTheLand,@soldToLandBuyer,@buyersEmail,@buyersPhoneNumber,@termsAndConditions,@notesForTheTerms,@paymentRemarks,@urlDeeds,@urlStampDeeds,@urlMoonclerkForm,@status,@county,@additionalNotes)";
+            string INSERT = "INSERT INTO tblPropertyInventory(Date_Listed,APN_ID,Original_Price,Current_Market_Value,Updated_Price,Image_no,Title,URL_link_for_each_social_media,GPS_Coordinates,GPS_URL_Link,Video_Property_Link,Current_Status,Lands_Sold_Site,Date_Sold,Current_Owner_of_the_Land,Sold_To_Land_Buyer,Buyers_Email,Buyers_PhoneNumber,Terms_and_Conditions,Notes_for_the_Terms,Payment_Remarks,URL_Deeds,URL_Stamp_Deeds,URL_Moonclerk_Form,Status,County,Additional_Notes)VALUES(@dateListed,@apnID,@originalPrice,@currentMarketValue,@updatedPrice,@imageNo,@title,@urlLinkForEachSocialMedia,@gpsCoordinates,@gpsUrlLink,@videoProperty,@currentStatus,@landsSoldSite,@dateSold,@currentOwnerOfTheLand,@soldToLandBuyer,@buyersEmail,@buyersPhoneNumber,@termsAndConditions,@notesForTheTerms,@paymentRemarks,@urlDeeds,@urlStampDeeds,@urlMoonclerkForm,@status,@county,@additionalNotes)";
             cmd.Parameters.AddWithValue("dateListed", PropertyInventory.dateListed);
             cmd.Parameters.AddWithValue("apnID", PropertyInventory.apnID);
             cmd.Parameters.AddWithValue("originalPrice", PropertyInventory.originalPrice);
@@ -976,6 +976,50 @@ namespace RVL_Management_System.Class
 
             conn.Close();
             MetroMessageBox.Show(_owner, "Successfully deleted these Video Tutorials Information.", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cmd.Parameters.Clear();
+        }
+
+        public static void propertyInventoryDelete()
+        {
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+            PropertyInventoryDelete _owner = new PropertyInventoryDelete();
+
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
+            conn.Open();
+
+            cmd.Connection = conn;
+            string DELETE = "DELETE tblPropertyInventory WHERE APN_ID = @apnid";
+            cmd.Parameters.AddWithValue("apnid", PropertyInventoryDelete.apnID);
+            cmd.CommandText = DELETE;
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+            MetroMessageBox.Show(_owner, "Successfully deleted these Property Inventory Information.", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cmd.Parameters.Clear();
+        }
+
+        public static void deedAdventureDelete()
+        {
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+
+            LandsOwnedDeedAdventureDelete _owner = new LandsOwnedDeedAdventureDelete();
+
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
+            conn.Open();
+
+            cmd.Connection = conn;
+            string DELETE = "DELETE DeedAdventure WHERE APN = @apn";
+            cmd.Parameters.AddWithValue("apn", LandsOwnedDeedAdventureDelete.apn);
+            cmd.CommandText = DELETE;
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+            MetroMessageBox.Show(_owner, "Successfully deleted these Deed Adventure Information.", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             cmd.Parameters.Clear();
         }

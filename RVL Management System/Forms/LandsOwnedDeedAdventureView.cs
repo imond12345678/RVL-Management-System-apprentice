@@ -46,9 +46,74 @@ namespace RVL_Management_System.Forms
             
         }
 
+        public void searchAPN()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
+
+
+                conn.Open();
+                cmd.Connection = conn;
+                string LOAD = "SELECT * FROM DeedAdventure WHERE APN = @apn";
+                cmd.Parameters.AddWithValue("apn", txt_search.Text);
+                cmd.CommandText = LOAD;
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                GridView.DataSource = dt;
+                conn.Close();
+            }
+
+        }
+
+        public void searchCounty()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["connGlobal"].ToString();
+
+
+                conn.Open();
+                cmd.Connection = conn;
+                string LOAD = "SELECT * FROM DeedAdventure WHERE County = @county";
+                cmd.Parameters.AddWithValue("county", txt_search.Text);
+                cmd.CommandText = LOAD;
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                GridView.DataSource = dt;
+                conn.Close();
+            }
+
+        }
+
         private void LandsOwnedDeedAdventureView_Load(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        private void txt_search_ButtonClick(object sender, EventArgs e)
+        {
+            if (cBoxSearchBy.Text == "APN")
+            {
+                searchAPN();
+            }
+            else if (cBoxSearchBy.Text == "County")
+            {
+                searchCounty();
+            }
+        }
+
+        private void txt_search_ClearClicked()
+        {
+            cBoxSearchBy.Text = null;
         }
     }
 }

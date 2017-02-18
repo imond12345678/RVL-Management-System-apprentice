@@ -159,6 +159,12 @@
     <Compile Include="Forms\LandsOwnedDeedAdventure.Designer.cs">
       <DependentUpon>LandsOwnedDeedAdventure.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LandsOwnedDeedAdventureDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LandsOwnedDeedAdventureDelete.Designer.cs">
+      <DependentUpon>LandsOwnedDeedAdventureDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LandsOwnedDeedAdventureView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,12 @@
     </Compile>
     <Compile Include="Forms\PropertyInventoryDelete.Designer.cs">
       <DependentUpon>PropertyInventoryDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PropertyInventoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PropertyInventoryView.Designer.cs">
+      <DependentUpon>PropertyInventoryView.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SocialMediaDelete.cs">
       <SubType>Form</SubType>
@@ -503,6 +515,9 @@
     <EmbeddedResource Include="Forms\LandsOwnedDeedAdventure.resx">
       <DependentUpon>LandsOwnedDeedAdventure.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LandsOwnedDeedAdventureDelete.resx">
+      <DependentUpon>LandsOwnedDeedAdventureDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LandsOwnedDeedAdventureView.resx">
       <DependentUpon>LandsOwnedDeedAdventureView.cs</DependentUpon>
     </EmbeddedResource>
@@ -538,6 +553,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PropertyInventoryDelete.resx">
       <DependentUpon>PropertyInventoryDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PropertyInventoryView.resx">
+      <DependentUpon>PropertyInventoryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SocialMediaDelete.resx">
       <DependentUpon>SocialMediaDelete.cs</DependentUpon>

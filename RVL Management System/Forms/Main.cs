@@ -222,5 +222,40 @@ namespace RVL_Management_System.Forms
             UserDelete delete = new UserDelete();
             delete.ShowDialog();
         }
+
+        private void metroTile9_Click_1(object sender, EventArgs e)
+        {
+            PropertyInventoryDelete delete = new PropertyInventoryDelete();
+            delete.ShowDialog();
+        }
+
+        private void metroTile10_Click_1(object sender, EventArgs e)
+        {
+            SocialMediaDelete delete = new SocialMediaDelete();
+            delete.ShowDialog();
+        }
+
+        private void metroTile11_Click_1(object sender, EventArgs e)
+        {
+            AddLeadSource addLead = new AddLeadSource();
+            addLead.ShowDialog();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTile12_Click_1(object sender, EventArgs e)
+        {
+            PropertyInventoryView view = new PropertyInventoryView();
+            view.ShowDialog();
+        }
+
+        private void metroTile13_Click_1(object sender, EventArgs e)
+        {
+            LandsOwnedDeedAdventureDelete delete = new LandsOwnedDeedAdventureDelete();
+            delete.ShowDialog();
+        }
     }
 }
