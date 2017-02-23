@@ -205,11 +205,6 @@ namespace RVL_Management_System.Forms
 
         }
 
-        private void txt_totalExpense_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txt_totalExpense_Leave(object sender, EventArgs e)
         {
             //int value;
@@ -271,32 +266,138 @@ namespace RVL_Management_System.Forms
 
         private void txt_recordingFee_TextChanged(object sender, EventArgs e)
         {
-           
+            try
+            {
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+
+                int a = Convert.ToInt32(txt_recordingFee.Text);
+                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+                int c = Convert.ToInt32(txt_backTaxes.Text);
+                int d = Convert.ToInt32(txt_Notary.Text);
+                int f = Convert.ToInt32(txt_otherExpense.Text);
+                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
+
+                int g = Convert.ToInt32(txt_origPrice1.Text);
+                int h = Convert.ToInt32(txt_totalExpense1.Text);
+
+                txt_origPriceExpense1.Text = (g + h).ToString();
+            }
+            catch
+            {
+                txt_cardProcessingFee.Text = "0";
+                txt_backTaxes.Text = "0";
+                txt_otherExpense.Text = "0";
+            }
         }
 
         private void txt_backTaxes_TextChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+
+                int a = Convert.ToInt32(txt_recordingFee.Text);
+                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+                int c = Convert.ToInt32(txt_backTaxes.Text);
+                int d = Convert.ToInt32(txt_Notary.Text);
+                int f = Convert.ToInt32(txt_otherExpense.Text);
+                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
+
+                int g = Convert.ToInt32(txt_origPrice1.Text);
+                int h = Convert.ToInt32(txt_totalExpense1.Text);
+
+                txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
+            }
+            catch
+            {
+                txt_otherExpense.Text = "0";
+            }
         }
 
         private void txt_cardProcessingFee_TextChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+
+                int a = Convert.ToInt32(txt_recordingFee.Text);
+                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+                int c = Convert.ToInt32(txt_backTaxes.Text);
+                int d = Convert.ToInt32(txt_Notary.Text);
+                int f = Convert.ToInt32(txt_otherExpense.Text);
+                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
+
+                int g = Convert.ToInt32(txt_origPrice1.Text);
+                int h = Convert.ToInt32(txt_totalExpense1.Text);
+
+                txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
+            }
+            catch
+            {
+                txt_backTaxes.Text = "0";
+                txt_otherExpense.Text = "0";
+            }
         }
 
         private void txt_Notary_TextChanged(object sender, EventArgs e)
         {
-           
+            try
+            {
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+
+                int a = Convert.ToInt32(txt_recordingFee.Text);
+                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+                int c = Convert.ToInt32(txt_backTaxes.Text);
+                int d = Convert.ToInt32(txt_Notary.Text);
+                int f = Convert.ToInt32(txt_otherExpense.Text);
+                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
+
+                int g = Convert.ToInt32(txt_origPrice1.Text);
+                int h = Convert.ToInt32(txt_totalExpense1.Text);
+
+                txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
+            }
+            catch
+            {
+                txt_otherExpense.Text = "0";
+            }
         }
 
         private void txt_otherExpense_TextChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+                txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) + Convert.ToInt32(txt_totalExpense1.Text));
+
+
+                int a = Convert.ToInt32(txt_recordingFee.Text);
+                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+                int c = Convert.ToInt32(txt_backTaxes.Text);
+                int d = Convert.ToInt32(txt_Notary.Text);
+                int f = Convert.ToInt32(txt_otherExpense.Text);
+
+                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
+
+                int g = Convert.ToInt32(txt_origPrice1.Text);
+                int h = Convert.ToInt32(txt_totalExpense1.Text);
+
+                txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
+            }
+            catch
+            {
+
+            }
         }
 
         private void txt_recordingFee_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)8;
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != (char)8;
 
             if (e.KeyChar == (char)13)
             {
@@ -314,20 +415,43 @@ namespace RVL_Management_System.Forms
             {
                 txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_totalExpense1.Text) + Convert.ToInt32(txt_origPrice1.Text));
 
-                txt_netProfit.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_totalExpense1.Text) + Convert.ToInt32(txt_origPrice1.Text));
+                //txt_netProfit.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_netSale.Text) - Convert.ToInt32(txt_totalExpense1.Text));
 
                 txt_shared60.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) * 0.60);
                 txt_shared40.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) * 0.40);
 
+                
 
-                int a = Convert.ToInt32(txt_origPrice1.Text);
-                int b = Convert.ToInt32(txt_origPriceExpense1.Text);
-                int c = Convert.ToInt32(txt_origPrice.Text);
-                int d = Convert.ToInt32(txt_totalAmountPaid.Text);
+                
+                int g = Convert.ToInt32(txt_origPrice1.Text);
+                int h = Convert.ToInt32(txt_totalExpense1.Text);
+                int i = Convert.ToInt32(txt_netSale.Text);
+                int j = Convert.ToInt32(txt_totalExpense1.Text);
+                int k = Convert.ToInt32(txt_origPrice1.Text);
+                int l = Convert.ToInt32(txt_origPriceExpense1.Text);
 
-                txt_netSale.Text = (a - b).ToString();
+                
 
-                txt_paymentsBalanceDue.Text = (c - d).ToString();
+                txt_netProfit.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", i - j);
+                
+
+                txt_origPriceExpense1.Text = (h + g).ToString();
+
+                txt_netSale.Text = (i - j).ToString();
+            }
+
+            //computing for expenses
+            try
+            {
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+
+            }
+            catch
+            {
+                txt_cardProcessingFee.Text = "0";
+                txt_backTaxes.Text = "0";
+                txt_otherExpense.Text = "0";
             }
         }
 
@@ -348,62 +472,157 @@ namespace RVL_Management_System.Forms
 
         private void txt_cardProcessingFee_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text));
+            //try
+            //{
+            //    txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text));
 
-                int a = Convert.ToInt32(txt_recordingFee.Text);
-                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
-                txt_totalExpense1.Text = (a + b).ToString();
-            }
-            catch
-            {
-                txt_cardProcessingFee.Text = "0";
-            }
+            //    int a = Convert.ToInt32(txt_recordingFee.Text);
+            //    int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+            //    txt_totalExpense1.Text = (a + b).ToString();
+            //}
+            //catch
+            //{
+            //    txt_cardProcessingFee.Text = "0";
+            //}
         }
 
         private void txt_backTaxes_Leave(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
 
-                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text));
+            //    txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text));
 
-                int a = Convert.ToInt32(txt_recordingFee.Text);
-                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
-                int c = Convert.ToInt32(txt_backTaxes.Text);
-                txt_totalExpense1.Text = (a + b + c).ToString();
-            }
-            catch
-            {
-                txt_backTaxes.Text = "0";
-            }
+            //    int a = Convert.ToInt32(txt_recordingFee.Text);
+            //    int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+            //    int c = Convert.ToInt32(txt_backTaxes.Text);
+            //    txt_totalExpense1.Text = (a + b + c).ToString();
+            //}
+            //catch
+            //{
+            //    txt_backTaxes.Text = "0";
+            //}
 
         }
 
         private void txt_Notary_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text));
+            //try
+            //{
+            //    txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text));
 
-                int a = Convert.ToInt32(txt_recordingFee.Text);
-                int b = Convert.ToInt32(txt_cardProcessingFee.Text);
-                int c = Convert.ToInt32(txt_backTaxes.Text);
-                int d = Convert.ToInt32(txt_Notary.Text);
-                txt_totalExpense1.Text = (a + b + c + d).ToString();
-            }
-            catch
-            {
-                txt_Notary.Text = "0";
-            }
+            //    int a = Convert.ToInt32(txt_recordingFee.Text);
+            //    int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+            //    int c = Convert.ToInt32(txt_backTaxes.Text);
+            //    int d = Convert.ToInt32(txt_Notary.Text);
+            //    txt_totalExpense1.Text = (a + b + c + d).ToString();
+            //}
+            //catch
+            //{
+            //    txt_Notary.Text = "0";
+            //}
         }
 
         private void txt_otherExpense_Leave(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+
+            //    int a = Convert.ToInt32(txt_recordingFee.Text);
+            //    int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+            //    int c = Convert.ToInt32(txt_backTaxes.Text);
+            //    int d = Convert.ToInt32(txt_Notary.Text);
+            //    int f = Convert.ToInt32(txt_otherExpense.Text);
+            //    txt_totalExpense1.Text = (a + b + c + d + f).ToString();
+
+            //    int g = Convert.ToInt32(txt_origPrice1.Text);
+            //    int h = Convert.ToInt32(txt_totalExpense1.Text);
+
+            //    txt_origPriceExpense1.Text = (g + h).ToString();
+            //}
+            //catch
+            //{
+            //    txt_otherExpense.Text = "0";
+            //}
+        }
+
+        private void txt_origPrice_TextChanged(object sender, EventArgs e)
+        {
+
+            //sample1
+            //try
+            //{
+            //    txt_landCost.Text = txt_origPrice.Text;
+            //    txt_origPrice1.Text = txt_origPrice.Text;
+            //    txt_origPriceExpense1.Text = txt_originalPriceExpense.Text;
+
+            //    int value;
+            //    if (int.TryParse(txt_landCost.Text, out value))
+            //    {
+            //        txt_landCost.Text = String.Format(CultureInfo.CurrentCulture, "{0:C2}", value);
+            //    }
+            //    else
+            //    {
+            //        txt_netSale.Text = String.Empty;
+            //    }
+
+            //    txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+            //    txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) + Convert.ToInt32(txt_totalExpense1.Text));
+
+
+            //    int a = Convert.ToInt32(txt_recordingFee.Text);
+            //    int b = Convert.ToInt32(txt_cardProcessingFee.Text);
+            //    int c = Convert.ToInt32(txt_backTaxes.Text);
+            //    int d = Convert.ToInt32(txt_Notary.Text);
+            //    int f = Convert.ToInt32(txt_otherExpense.Text);
+
+            //    txt_totalExpense1.Text = (a + b + c + d + f).ToString();
+
+            //    int g = Convert.ToInt32(txt_origPrice1.Text);
+            //    int h = Convert.ToInt32(txt_totalExpense1.Text);
+
+            //    txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
+            //}
+            //catch
+            //{
+
+            //}
+
+
+            //sample2
             try
             {
+
+                txt_landCost.Text = txt_origPrice.Text;
+                txt_origPrice1.Text = txt_origPrice.Text;
+                txt_origPriceExpense1.Text = txt_originalPriceExpense.Text;
+
+                int value;
+                if (int.TryParse(txt_landCost.Text, out value))
+                {
+                    txt_landCost.Text = String.Format(CultureInfo.CurrentCulture, "{0:C2}", value);
+                }
+                else
+                {
+                    txt_netSale.Text = String.Empty;
+                }
+                txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_totalExpense1.Text) + Convert.ToInt32(txt_origPrice1.Text));
+
+                txt_netProfit.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_totalExpense1.Text) + Convert.ToInt32(txt_origPrice1.Text));
+                txt_shared60.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) * 0.60);
+                txt_shared40.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) * 0.40);
+
+                int w = Convert.ToInt32(txt_origPrice1.Text);
+                int v = Convert.ToInt32(txt_origPriceExpense1.Text);
+
+                txt_netSale.Text = (w - v).ToString();
+
                 txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+                txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) + Convert.ToInt32(txt_totalExpense1.Text));
 
 
                 int a = Convert.ToInt32(txt_recordingFee.Text);
@@ -411,51 +630,53 @@ namespace RVL_Management_System.Forms
                 int c = Convert.ToInt32(txt_backTaxes.Text);
                 int d = Convert.ToInt32(txt_Notary.Text);
                 int f = Convert.ToInt32(txt_otherExpense.Text);
+
                 txt_totalExpense1.Text = (a + b + c + d + f).ToString();
 
                 int g = Convert.ToInt32(txt_origPrice1.Text);
                 int h = Convert.ToInt32(txt_totalExpense1.Text);
 
-                txt_origPriceExpense1.Text = (g + h).ToString();
+                txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
+
+
             }
             catch
             {
-                txt_otherExpense.Text = "0";
-            }
-        }
-
-        private void txt_origPrice_Validated(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_origPrice_TextChanged(object sender, EventArgs e)
-        {
-            txt_origPrice1.Text = txt_origPrice.Text;
-            txt_landCost.Text = txt_origPrice.Text;
-            txt_origPriceExpense1.Text  = txt_originalPriceExpense.Text;
-
-            int value;
-            if (int.TryParse(txt_landCost.Text, out value))
-            {
-                txt_landCost.Text = String.Format(CultureInfo.CurrentCulture, "{0:C2}", value);
-            }
-            else
-            {
-                txt_netSale.Text = String.Empty;
+                txt_originalPriceExpense.Text = "0";
             }
         }
 
         private void txt_origPrice1_TextChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int a = Convert.ToInt32(txt_origPrice1.Text);
+                int b = Convert.ToInt32(txt_totalExpense1.Text);
+
+                //txt_origPriceExpense1.Text = (a + b).ToString();
+                txt_originalPriceExpense.Text = (a + b).ToString();
+
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", a + b);
+            }
+            catch
+            {
+                txt_totalExpense1.Text = 0.ToString();
+            }
         }
 
         private void txt_totalExpense1_TextChanged(object sender, EventArgs e)
         {
-            //txt_netSale.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice.Text) - Convert.ToInt32(txt_origPriceExpense1.Text));
+            try
+            {
+                int a = Convert.ToInt32(txt_origPrice1.Text);
+                int b = Convert.ToInt32(txt_totalExpense1.Text);
 
-            
+                txt_origPriceExpense1.Text = (a + b).ToString();
+            }
+            catch
+            {
+                txt_totalExpense1.Text = 0.ToString();
+            }
         }
 
         private void txt_paymentsBalanceDue_TextChanged(object sender, EventArgs e)
@@ -486,6 +707,63 @@ namespace RVL_Management_System.Forms
         {
             PropertyAccountingBusinessView view = new PropertyAccountingBusinessView();
             view.ShowDialog();
+        }
+
+        private void txt_origPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                //TODO:NOTHING
+            }
+        }
+
+        private void txt_cardProcessingFee_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != (char)8;
+
+            if (e.KeyChar == (char)13)
+            {
+                txt_cardProcessingFee.Text = string.Format("{0:n0}", double.Parse(txt_recordingFee.Text));
+            }
+        }
+
+        private void txt_backTaxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != (char)8;
+
+            if (e.KeyChar == (char)13)
+            {
+                txt_backTaxes.Text = string.Format("{0:n0}", double.Parse(txt_recordingFee.Text));
+            }
+        }
+
+        private void txt_Notary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != (char)8;
+
+            if (e.KeyChar == (char)13)
+            {
+                txt_Notary.Text = string.Format("{0:n0}", double.Parse(txt_recordingFee.Text));
+            }
+        }
+
+        private void txt_otherExpense_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != (char)8;
+
+            if (e.KeyChar == (char)13)
+            {
+                txt_otherExpense.Text = string.Format("{0:n0}", double.Parse(txt_recordingFee.Text));
+            }
+        }
+
+        private void txt_origPriceExpense1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
