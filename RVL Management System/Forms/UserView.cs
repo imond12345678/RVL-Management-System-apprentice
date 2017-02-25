@@ -161,18 +161,23 @@ namespace RVL_Management_System
             }
             else if (cBoxSearchBy.Text == "Full name")
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
                 {
                     e.Handled = true;
                 }
             }
             else if (cBoxSearchBy.Text == "Username")
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar))
+                if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
                 {
                     e.Handled = true;
                 }
             }
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

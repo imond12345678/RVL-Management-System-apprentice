@@ -122,5 +122,29 @@ namespace RVL_Management_System.Forms
         {
             txt_search.Text = null;
         }
+
+        private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cBoxSearchBy.Text == "Account ID")
+            {
+                if (!char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (cBoxSearchBy.Text == "Full name")
+            {
+                if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+           
+        }
+
+        private void txt_search_ClearClicked()
+        {
+            cBoxSearchBy.Text = null;
+        }
     }
 }

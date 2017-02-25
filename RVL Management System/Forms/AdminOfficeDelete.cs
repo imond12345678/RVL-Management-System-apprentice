@@ -121,14 +121,20 @@ namespace RVL_Management_System
 
         private void txt_search_ButtonClick(object sender, EventArgs e)
         {
-
-            if (cBoxSearchBy.Text == "ACID")
+            if (txt_search.Text == string.Empty)
             {
-                searchAdminContactID();
+                MetroMessageBox.Show(this, "Please fill-up the required fields - Search", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
-            else if (cBoxSearchBy.Text == "Full name")
+            else
             {
-                searchAdminContactFName();
+                if (cBoxSearchBy.Text == "ACID")
+                {
+                    searchAdminContactID();
+                }
+                else if (cBoxSearchBy.Text == "Full name")
+                {
+                    searchAdminContactFName();
+                }
             }
         }
 
@@ -158,6 +164,28 @@ namespace RVL_Management_System
         private void txt_search_ClearClicked()
         {
             cBoxSearchBy.Text = null;
+        }
+
+        private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cBoxSearchBy.Text == "ACID")
+            {
+                if (!char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (cBoxSearchBy.Text == "Full name")
+            {
+                if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Please select a category to search on.", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

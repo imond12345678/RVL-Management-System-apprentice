@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.TabControlMain = new MetroFramework.Controls.MetroTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_UserDelete = new MetroFramework.Controls.MetroTile();
+            this.btn_viewUser = new MetroFramework.Controls.MetroTile();
+            this.btn_editUser = new MetroFramework.Controls.MetroTile();
+            this.btn_addUser = new MetroFramework.Controls.MetroTile();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.metroTile11 = new MetroFramework.Controls.MetroTile();
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.btn_marketing = new MetroFramework.Controls.MetroTile();
             this.btn_blogsMarketing = new MetroFramework.Controls.MetroTile();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btn_UserDelete = new MetroFramework.Controls.MetroTile();
-            this.btn_viewUser = new MetroFramework.Controls.MetroTile();
-            this.btn_editUser = new MetroFramework.Controls.MetroTile();
-            this.btn_addUser = new MetroFramework.Controls.MetroTile();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btn_exportCompany = new MetroFramework.Controls.MetroTile();
             this.btn_viewCompany = new MetroFramework.Controls.MetroTile();
@@ -60,6 +60,7 @@
             this.btn_businessPersonal = new MetroFramework.Controls.MetroTile();
             this.btn_accountingBusiness = new MetroFramework.Controls.MetroTile();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.metroTile13 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.btn_landstay = new MetroFramework.Controls.MetroTile();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -79,10 +80,15 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbl_name = new System.Windows.Forms.ToolStripStatusLabel();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.metroTile13 = new MetroFramework.Controls.MetroTile();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.metroTile14 = new MetroFramework.Controls.MetroTile();
+            this.metroTile15 = new MetroFramework.Controls.MetroTile();
+            this.metroTile16 = new MetroFramework.Controls.MetroTile();
+            this.metroTile17 = new MetroFramework.Controls.MetroTile();
+            this.metroTile18 = new MetroFramework.Controls.MetroTile();
             this.TabControlMain.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -90,6 +96,7 @@
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.tabPage9.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControlMain
@@ -97,20 +104,93 @@
             this.TabControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TabControlMain.Controls.Add(this.tabPage5);
-            this.TabControlMain.Controls.Add(this.tabPage2);
             this.TabControlMain.Controls.Add(this.tabPage1);
+            this.TabControlMain.Controls.Add(this.tabPage9);
+            this.TabControlMain.Controls.Add(this.tabPage2);
             this.TabControlMain.Controls.Add(this.tabPage3);
             this.TabControlMain.Controls.Add(this.tabPage4);
+            this.TabControlMain.Controls.Add(this.tabPage5);
             this.TabControlMain.Controls.Add(this.tabPage6);
             this.TabControlMain.Controls.Add(this.tabPage7);
             this.TabControlMain.Controls.Add(this.tabPage8);
             this.TabControlMain.Location = new System.Drawing.Point(23, 148);
             this.TabControlMain.Name = "TabControlMain";
-            this.TabControlMain.SelectedIndex = 5;
-            this.TabControlMain.Size = new System.Drawing.Size(865, 226);
+            this.TabControlMain.SelectedIndex = 1;
+            this.TabControlMain.Size = new System.Drawing.Size(954, 226);
             this.TabControlMain.TabIndex = 0;
             this.TabControlMain.UseSelectable = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btn_UserDelete);
+            this.tabPage1.Controls.Add(this.btn_viewUser);
+            this.tabPage1.Controls.Add(this.btn_editUser);
+            this.tabPage1.Controls.Add(this.btn_addUser);
+            this.tabPage1.Location = new System.Drawing.Point(4, 38);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(946, 184);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "User Information";
+            // 
+            // btn_UserDelete
+            // 
+            this.btn_UserDelete.ActiveControl = null;
+            this.btn_UserDelete.Location = new System.Drawing.Point(426, 47);
+            this.btn_UserDelete.Name = "btn_UserDelete";
+            this.btn_UserDelete.Size = new System.Drawing.Size(124, 102);
+            this.btn_UserDelete.TabIndex = 4;
+            this.btn_UserDelete.Text = "User Delete";
+            this.btn_UserDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_UserDelete.TileImage = global::RVL_Management_System.Properties.Resources.user_1;
+            this.btn_UserDelete.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_UserDelete.UseSelectable = true;
+            this.btn_UserDelete.UseTileImage = true;
+            this.btn_UserDelete.Click += new System.EventHandler(this.btn_UserDelete_Click);
+            // 
+            // btn_viewUser
+            // 
+            this.btn_viewUser.ActiveControl = null;
+            this.btn_viewUser.Location = new System.Drawing.Point(296, 47);
+            this.btn_viewUser.Name = "btn_viewUser";
+            this.btn_viewUser.Size = new System.Drawing.Size(124, 102);
+            this.btn_viewUser.TabIndex = 3;
+            this.btn_viewUser.Text = "User View";
+            this.btn_viewUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_viewUser.TileImage = global::RVL_Management_System.Properties.Resources.search;
+            this.btn_viewUser.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_viewUser.UseSelectable = true;
+            this.btn_viewUser.UseTileImage = true;
+            this.btn_viewUser.Click += new System.EventHandler(this.metroTile4_Click);
+            // 
+            // btn_editUser
+            // 
+            this.btn_editUser.ActiveControl = null;
+            this.btn_editUser.Location = new System.Drawing.Point(168, 47);
+            this.btn_editUser.Name = "btn_editUser";
+            this.btn_editUser.Size = new System.Drawing.Size(124, 102);
+            this.btn_editUser.TabIndex = 1;
+            this.btn_editUser.Text = "User Edit";
+            this.btn_editUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_editUser.TileImage = global::RVL_Management_System.Properties.Resources.user;
+            this.btn_editUser.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_editUser.UseSelectable = true;
+            this.btn_editUser.UseTileImage = true;
+            this.btn_editUser.Click += new System.EventHandler(this.metroTile2_Click);
+            // 
+            // btn_addUser
+            // 
+            this.btn_addUser.ActiveControl = null;
+            this.btn_addUser.Location = new System.Drawing.Point(39, 47);
+            this.btn_addUser.Name = "btn_addUser";
+            this.btn_addUser.Size = new System.Drawing.Size(124, 102);
+            this.btn_addUser.TabIndex = 0;
+            this.btn_addUser.Text = "User Add";
+            this.btn_addUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_addUser.TileImage = global::RVL_Management_System.Properties.Resources.user_21;
+            this.btn_addUser.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_addUser.UseSelectable = true;
+            this.btn_addUser.UseTileImage = true;
+            this.btn_addUser.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // tabPage2
             // 
@@ -121,7 +201,7 @@
             this.tabPage2.Controls.Add(this.btn_blogsMarketing);
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(857, 184);
+            this.tabPage2.Size = new System.Drawing.Size(946, 184);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Marketing";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -201,78 +281,6 @@
             this.btn_blogsMarketing.UseTileImage = true;
             this.btn_blogsMarketing.Click += new System.EventHandler(this.metroTile21_Click);
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.btn_UserDelete);
-            this.tabPage1.Controls.Add(this.btn_viewUser);
-            this.tabPage1.Controls.Add(this.btn_editUser);
-            this.tabPage1.Controls.Add(this.btn_addUser);
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(857, 184);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "User Information";
-            // 
-            // btn_UserDelete
-            // 
-            this.btn_UserDelete.ActiveControl = null;
-            this.btn_UserDelete.Location = new System.Drawing.Point(426, 47);
-            this.btn_UserDelete.Name = "btn_UserDelete";
-            this.btn_UserDelete.Size = new System.Drawing.Size(124, 102);
-            this.btn_UserDelete.TabIndex = 4;
-            this.btn_UserDelete.Text = "User Delete";
-            this.btn_UserDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_UserDelete.TileImage = global::RVL_Management_System.Properties.Resources.user_1;
-            this.btn_UserDelete.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_UserDelete.UseSelectable = true;
-            this.btn_UserDelete.UseTileImage = true;
-            this.btn_UserDelete.Click += new System.EventHandler(this.btn_UserDelete_Click);
-            // 
-            // btn_viewUser
-            // 
-            this.btn_viewUser.ActiveControl = null;
-            this.btn_viewUser.Location = new System.Drawing.Point(296, 47);
-            this.btn_viewUser.Name = "btn_viewUser";
-            this.btn_viewUser.Size = new System.Drawing.Size(124, 102);
-            this.btn_viewUser.TabIndex = 3;
-            this.btn_viewUser.Text = "User View";
-            this.btn_viewUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_viewUser.TileImage = global::RVL_Management_System.Properties.Resources.search;
-            this.btn_viewUser.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_viewUser.UseSelectable = true;
-            this.btn_viewUser.UseTileImage = true;
-            this.btn_viewUser.Click += new System.EventHandler(this.metroTile4_Click);
-            // 
-            // btn_editUser
-            // 
-            this.btn_editUser.ActiveControl = null;
-            this.btn_editUser.Location = new System.Drawing.Point(168, 47);
-            this.btn_editUser.Name = "btn_editUser";
-            this.btn_editUser.Size = new System.Drawing.Size(124, 102);
-            this.btn_editUser.TabIndex = 1;
-            this.btn_editUser.Text = "User Edit";
-            this.btn_editUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_editUser.TileImage = global::RVL_Management_System.Properties.Resources.user;
-            this.btn_editUser.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_editUser.UseSelectable = true;
-            this.btn_editUser.UseTileImage = true;
-            this.btn_editUser.Click += new System.EventHandler(this.metroTile2_Click);
-            // 
-            // btn_addUser
-            // 
-            this.btn_addUser.ActiveControl = null;
-            this.btn_addUser.Location = new System.Drawing.Point(39, 47);
-            this.btn_addUser.Name = "btn_addUser";
-            this.btn_addUser.Size = new System.Drawing.Size(124, 102);
-            this.btn_addUser.TabIndex = 0;
-            this.btn_addUser.Text = "User Add";
-            this.btn_addUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_addUser.TileImage = global::RVL_Management_System.Properties.Resources.user_21;
-            this.btn_addUser.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_addUser.UseSelectable = true;
-            this.btn_addUser.UseTileImage = true;
-            this.btn_addUser.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btn_exportCompany);
@@ -282,7 +290,7 @@
             this.tabPage3.Controls.Add(this.btn_addCompany);
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(857, 184);
+            this.tabPage3.Size = new System.Drawing.Size(946, 184);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Company Logins";
             // 
@@ -370,7 +378,7 @@
             this.tabPage4.Controls.Add(this.btn_addSocial);
             this.tabPage4.Location = new System.Drawing.Point(4, 38);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(857, 184);
+            this.tabPage4.Size = new System.Drawing.Size(946, 184);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Social Media";
             // 
@@ -458,7 +466,7 @@
             this.tabPage5.Controls.Add(this.btn_accountingBusiness);
             this.tabPage5.Location = new System.Drawing.Point(4, 38);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(857, 184);
+            this.tabPage5.Size = new System.Drawing.Size(946, 184);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Property Accounting";
             // 
@@ -544,9 +552,20 @@
             this.tabPage6.Controls.Add(this.btn_landstay);
             this.tabPage6.Location = new System.Drawing.Point(4, 38);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(857, 184);
+            this.tabPage6.Size = new System.Drawing.Size(946, 184);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Land Stay";
+            // 
+            // metroTile13
+            // 
+            this.metroTile13.ActiveControl = null;
+            this.metroTile13.Location = new System.Drawing.Point(512, 58);
+            this.metroTile13.Name = "metroTile13";
+            this.metroTile13.Size = new System.Drawing.Size(259, 78);
+            this.metroTile13.TabIndex = 2;
+            this.metroTile13.Text = "Lands Owned by Deed Adventure Delete";
+            this.metroTile13.UseSelectable = true;
+            this.metroTile13.Click += new System.EventHandler(this.metroTile13_Click_1);
             // 
             // metroTile1
             // 
@@ -579,7 +598,7 @@
             this.tabPage7.Controls.Add(this.btn_addVideo);
             this.tabPage7.Location = new System.Drawing.Point(4, 38);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(857, 184);
+            this.tabPage7.Size = new System.Drawing.Size(946, 184);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Video Tutorials";
             // 
@@ -665,7 +684,7 @@
             this.tabPage8.Controls.Add(this.metroTile3);
             this.tabPage8.Location = new System.Drawing.Point(4, 38);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(857, 184);
+            this.tabPage8.Size = new System.Drawing.Size(946, 184);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Tasks And Training Materials";
             // 
@@ -724,7 +743,7 @@
             this.lbl_name});
             this.statusStrip.Location = new System.Drawing.Point(20, 388);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(870, 22);
+            this.statusStrip.Size = new System.Drawing.Size(959, 22);
             this.statusStrip.TabIndex = 3;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -773,22 +792,99 @@
             this.metroTile4.UseTileImage = true;
             this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click_1);
             // 
-            // metroTile13
+            // tabPage9
             // 
-            this.metroTile13.ActiveControl = null;
-            this.metroTile13.Location = new System.Drawing.Point(512, 58);
-            this.metroTile13.Name = "metroTile13";
-            this.metroTile13.Size = new System.Drawing.Size(259, 78);
-            this.metroTile13.TabIndex = 2;
-            this.metroTile13.Text = "Lands Owned by Deed Adventure Delete";
-            this.metroTile13.UseSelectable = true;
-            this.metroTile13.Click += new System.EventHandler(this.metroTile13_Click_1);
+            this.tabPage9.Controls.Add(this.metroTile14);
+            this.tabPage9.Controls.Add(this.metroTile15);
+            this.tabPage9.Controls.Add(this.metroTile16);
+            this.tabPage9.Controls.Add(this.metroTile17);
+            this.tabPage9.Controls.Add(this.metroTile18);
+            this.tabPage9.Location = new System.Drawing.Point(4, 38);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(946, 184);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Admin Office";
+            // 
+            // metroTile14
+            // 
+            this.metroTile14.ActiveControl = null;
+            this.metroTile14.Location = new System.Drawing.Point(670, 41);
+            this.metroTile14.Name = "metroTile14";
+            this.metroTile14.Size = new System.Drawing.Size(124, 102);
+            this.metroTile14.TabIndex = 10;
+            this.metroTile14.Text = "Export";
+            this.metroTile14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile14.TileImage = global::RVL_Management_System.Properties.Resources.export_2;
+            this.metroTile14.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.metroTile14.UseSelectable = true;
+            this.metroTile14.UseTileImage = true;
+            this.metroTile14.Click += new System.EventHandler(this.metroTile14_Click_1);
+            // 
+            // metroTile15
+            // 
+            this.metroTile15.ActiveControl = null;
+            this.metroTile15.Location = new System.Drawing.Point(539, 41);
+            this.metroTile15.Name = "metroTile15";
+            this.metroTile15.Size = new System.Drawing.Size(124, 102);
+            this.metroTile15.TabIndex = 9;
+            this.metroTile15.Text = "View";
+            this.metroTile15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile15.TileImage = global::RVL_Management_System.Properties.Resources.text_book_opened_from_top_view;
+            this.metroTile15.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.metroTile15.UseSelectable = true;
+            this.metroTile15.UseTileImage = true;
+            this.metroTile15.Click += new System.EventHandler(this.metroTile15_Click_1);
+            // 
+            // metroTile16
+            // 
+            this.metroTile16.ActiveControl = null;
+            this.metroTile16.Location = new System.Drawing.Point(410, 41);
+            this.metroTile16.Name = "metroTile16";
+            this.metroTile16.Size = new System.Drawing.Size(124, 102);
+            this.metroTile16.TabIndex = 8;
+            this.metroTile16.Text = "Delete";
+            this.metroTile16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile16.TileImage = global::RVL_Management_System.Properties.Resources.file;
+            this.metroTile16.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.metroTile16.UseSelectable = true;
+            this.metroTile16.UseTileImage = true;
+            this.metroTile16.Click += new System.EventHandler(this.metroTile16_Click_1);
+            // 
+            // metroTile17
+            // 
+            this.metroTile17.ActiveControl = null;
+            this.metroTile17.Location = new System.Drawing.Point(282, 41);
+            this.metroTile17.Name = "metroTile17";
+            this.metroTile17.Size = new System.Drawing.Size(124, 102);
+            this.metroTile17.TabIndex = 7;
+            this.metroTile17.Text = "Edit";
+            this.metroTile17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile17.TileImage = global::RVL_Management_System.Properties.Resources.edit1;
+            this.metroTile17.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.metroTile17.UseSelectable = true;
+            this.metroTile17.UseTileImage = true;
+            this.metroTile17.Click += new System.EventHandler(this.metroTile17_Click_1);
+            // 
+            // metroTile18
+            // 
+            this.metroTile18.ActiveControl = null;
+            this.metroTile18.Location = new System.Drawing.Point(153, 41);
+            this.metroTile18.Name = "metroTile18";
+            this.metroTile18.Size = new System.Drawing.Size(124, 102);
+            this.metroTile18.TabIndex = 6;
+            this.metroTile18.Text = "Add";
+            this.metroTile18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile18.TileImage = global::RVL_Management_System.Properties.Resources.file_1;
+            this.metroTile18.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.metroTile18.UseSelectable = true;
+            this.metroTile18.UseTileImage = true;
+            this.metroTile18.Click += new System.EventHandler(this.metroTile18_Click_1);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 430);
+            this.ClientSize = new System.Drawing.Size(999, 430);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.TabControlMain);
@@ -799,8 +895,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.TabControlMain.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
@@ -809,6 +905,7 @@
             this.tabPage8.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -867,5 +964,11 @@
         private MetroFramework.Controls.MetroTile metroTile11;
         private MetroFramework.Controls.MetroTile metroTile12;
         private MetroFramework.Controls.MetroTile metroTile13;
+        private System.Windows.Forms.TabPage tabPage9;
+        private MetroFramework.Controls.MetroTile metroTile14;
+        private MetroFramework.Controls.MetroTile metroTile15;
+        private MetroFramework.Controls.MetroTile metroTile16;
+        private MetroFramework.Controls.MetroTile metroTile17;
+        private MetroFramework.Controls.MetroTile metroTile18;
     }
 }

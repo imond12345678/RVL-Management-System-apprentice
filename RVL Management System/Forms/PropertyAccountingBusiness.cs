@@ -192,7 +192,7 @@ namespace RVL_Management_System.Forms
 
         private void txt_originalPriceExpense_TextChanged(object sender, EventArgs e)
         {
-           
+            //txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", txt_netSale.Text);
         }
 
         private void metroLabel15_DragDrop(object sender, DragEventArgs e)
@@ -381,12 +381,10 @@ namespace RVL_Management_System.Forms
                 int c = Convert.ToInt32(txt_backTaxes.Text);
                 int d = Convert.ToInt32(txt_Notary.Text);
                 int f = Convert.ToInt32(txt_otherExpense.Text);
-
-                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
-
                 int g = Convert.ToInt32(txt_origPrice1.Text);
                 int h = Convert.ToInt32(txt_totalExpense1.Text);
 
+                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
                 txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
             }
             catch
@@ -425,19 +423,15 @@ namespace RVL_Management_System.Forms
                 
                 int g = Convert.ToInt32(txt_origPrice1.Text);
                 int h = Convert.ToInt32(txt_totalExpense1.Text);
-                int i = Convert.ToInt32(txt_netSale.Text);
+                //int i = Convert.ToInt32(txt_netSale.Text);
                 int j = Convert.ToInt32(txt_totalExpense1.Text);
                 int k = Convert.ToInt32(txt_origPrice1.Text);
                 int l = Convert.ToInt32(txt_origPriceExpense1.Text);
 
-                
-
-                txt_netProfit.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", i - j);
-                
-
+                //txt_netProfit.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", i - j);
+                txt_netSale.Text = (g - l).ToString();
                 txt_origPriceExpense1.Text = (h + g).ToString();
 
-                txt_netSale.Text = (i - j).ToString();
             }
 
             //computing for expenses
@@ -552,50 +546,8 @@ namespace RVL_Management_System.Forms
         {
 
             //sample1
-            //try
-            //{
-            //    txt_landCost.Text = txt_origPrice.Text;
-            //    txt_origPrice1.Text = txt_origPrice.Text;
-            //    txt_origPriceExpense1.Text = txt_originalPriceExpense.Text;
-
-            //    int value;
-            //    if (int.TryParse(txt_landCost.Text, out value))
-            //    {
-            //        txt_landCost.Text = String.Format(CultureInfo.CurrentCulture, "{0:C2}", value);
-            //    }
-            //    else
-            //    {
-            //        txt_netSale.Text = String.Empty;
-            //    }
-
-            //    txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
-
-            //    txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) + Convert.ToInt32(txt_totalExpense1.Text));
-
-
-            //    int a = Convert.ToInt32(txt_recordingFee.Text);
-            //    int b = Convert.ToInt32(txt_cardProcessingFee.Text);
-            //    int c = Convert.ToInt32(txt_backTaxes.Text);
-            //    int d = Convert.ToInt32(txt_Notary.Text);
-            //    int f = Convert.ToInt32(txt_otherExpense.Text);
-
-            //    txt_totalExpense1.Text = (a + b + c + d + f).ToString();
-
-            //    int g = Convert.ToInt32(txt_origPrice1.Text);
-            //    int h = Convert.ToInt32(txt_totalExpense1.Text);
-
-            //    txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
-            //}
-            //catch
-            //{
-
-            //}
-
-
-            //sample2
             try
             {
-
                 txt_landCost.Text = txt_origPrice.Text;
                 txt_origPrice1.Text = txt_origPrice.Text;
                 txt_origPriceExpense1.Text = txt_originalPriceExpense.Text;
@@ -609,21 +561,7 @@ namespace RVL_Management_System.Forms
                 {
                     txt_netSale.Text = String.Empty;
                 }
-                txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_totalExpense1.Text) + Convert.ToInt32(txt_origPrice1.Text));
-
-                txt_netProfit.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_totalExpense1.Text) + Convert.ToInt32(txt_origPrice1.Text));
-                txt_shared60.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) * 0.60);
-                txt_shared40.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) * 0.40);
-
-                int w = Convert.ToInt32(txt_origPrice1.Text);
-                int v = Convert.ToInt32(txt_origPriceExpense1.Text);
-
-                txt_netSale.Text = (w - v).ToString();
-
-                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
-
-                txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) + Convert.ToInt32(txt_totalExpense1.Text));
-
+                
 
                 int a = Convert.ToInt32(txt_recordingFee.Text);
                 int b = Convert.ToInt32(txt_cardProcessingFee.Text);
@@ -631,18 +569,22 @@ namespace RVL_Management_System.Forms
                 int d = Convert.ToInt32(txt_Notary.Text);
                 int f = Convert.ToInt32(txt_otherExpense.Text);
 
-                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
 
                 int g = Convert.ToInt32(txt_origPrice1.Text);
                 int h = Convert.ToInt32(txt_totalExpense1.Text);
 
+
                 txt_origPriceExpense1.Text = (a + b + c + d + f + g + h).ToString();
+                txt_totalExpense1.Text = (a + b + c + d + f).ToString();
 
 
+                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_recordingFee.Text) + Convert.ToInt32(txt_cardProcessingFee.Text) + Convert.ToInt32(txt_backTaxes.Text) + Convert.ToInt32(txt_Notary.Text) + Convert.ToInt32(txt_otherExpense.Text));
+
+                txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", Convert.ToInt32(txt_origPrice1.Text) + Convert.ToInt32(txt_totalExpense1.Text));
             }
             catch
             {
-                txt_originalPriceExpense.Text = "0";
+
             }
         }
 
@@ -653,10 +595,10 @@ namespace RVL_Management_System.Forms
                 int a = Convert.ToInt32(txt_origPrice1.Text);
                 int b = Convert.ToInt32(txt_totalExpense1.Text);
 
-                //txt_origPriceExpense1.Text = (a + b).ToString();
-                txt_originalPriceExpense.Text = (a + b).ToString();
+                txt_origPriceExpense1.Text = (a + b).ToString();
+                //txt_originalPriceExpense.Text = (a + b).ToString();
 
-                txt_totalExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", a + b);
+               txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", a + b);
             }
             catch
             {
@@ -671,7 +613,10 @@ namespace RVL_Management_System.Forms
                 int a = Convert.ToInt32(txt_origPrice1.Text);
                 int b = Convert.ToInt32(txt_totalExpense1.Text);
 
+                txt_originalPriceExpense.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", a + b);
                 txt_origPriceExpense1.Text = (a + b).ToString();
+                //txt_originalPriceExpense.Text = (a + b).ToString();
+
             }
             catch
             {

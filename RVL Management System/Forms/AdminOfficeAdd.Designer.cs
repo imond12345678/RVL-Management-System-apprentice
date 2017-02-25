@@ -144,6 +144,7 @@
             this.txt_phoneNumber.WaterMark = "Phone number";
             this.txt_phoneNumber.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txt_phoneNumber.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_phoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phoneNumber_KeyPress);
             // 
             // txt_address
             // 
@@ -259,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 227);
+            this.ClientSize = new System.Drawing.Size(736, 226);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.cBoxCategory);
@@ -273,7 +274,7 @@
             this.MinimizeBox = false;
             this.Name = "AdminOfficeAdd";
             this.Resizable = false;
-            this.Text = "Admin Office Contact List";
+            this.Text = "Admin Office Add Contact List";
             this.Load += new System.EventHandler(this.Frm_AdminOffice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

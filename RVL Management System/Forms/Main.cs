@@ -257,5 +257,35 @@ namespace RVL_Management_System.Forms
             LandsOwnedDeedAdventureDelete delete = new LandsOwnedDeedAdventureDelete();
             delete.ShowDialog();
         }
+
+        private void metroTile18_Click_1(object sender, EventArgs e)
+        {
+            AdminOfficeAdd add = new AdminOfficeAdd();
+            add.ShowDialog();
+        }
+
+        private void metroTile17_Click_1(object sender, EventArgs e)
+        {
+            AdminOfficeUpdate update = new AdminOfficeUpdate();
+            update.ShowDialog();
+        }
+
+        private void metroTile16_Click_1(object sender, EventArgs e)
+        {
+            Frm_AdminOfficeDelete delete = new Frm_AdminOfficeDelete();
+            delete.ShowDialog();
+        }
+
+        private void metroTile15_Click_1(object sender, EventArgs e)
+        {
+            AdminOfficeView view = new AdminOfficeView();
+            view.ShowDialog();
+        }
+
+        private void metroTile14_Click_1(object sender, EventArgs e)
+        {
+            AdminOfficeExport export = new AdminOfficeExport();
+            export.ShowDialog();
+        }
     }
 }

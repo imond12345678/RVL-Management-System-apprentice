@@ -91,14 +91,7 @@ namespace RVL_Management_System.Forms
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            if (cBoxSearchBy.Text == "Admin Contact ID")
-            {
-                searchAdminID();
-            }
-            if (cBoxSearchBy.Text == "Full name")
-            {
-                searchAdminFName();
-            }
+            
         }
 
         private void GridView_SelectionChanged(object sender, EventArgs e)
@@ -179,6 +172,60 @@ namespace RVL_Management_System.Forms
         private void btn_export_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cBoxSearchBy.Text == "Admin Contact ID")
+            {
+                if (!char.IsDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (cBoxSearchBy.Text == "Full name")
+            {
+                if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txt_search_ButtonClick(object sender, EventArgs e)
+        {
+            if (cBoxSearchBy.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Please select a category on search by.", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (txt_search.Text == string.Empty)
+                {
+                    MetroMessageBox.Show(this, "Don't leave this field empty - Search", "RVL System", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    if (cBoxSearchBy.Text == "Admin Contact ID")
+                    {
+                        searchAdminID();
+                    }
+                    if (cBoxSearchBy.Text == "Full name")
+                    {
+                        searchAdminFName();
+                    }
+                }
+            }
+        }
+
+        private void txt_search_ClearClicked()
+        {
+            cBoxSearchBy.Text = null;
+        }
+
+        private void cBoxSearchBy_TextChanged(object sender, EventArgs e)
+        {
+            txt_search.Text = null;
         }
     }
 }
