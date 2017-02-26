@@ -138,7 +138,7 @@ namespace RVL_Management_System
                     Password = txt_pw.Text;
                     fullName = txt_name.Text;
                     MetroMessageBox.Show(this, "Welcome", "RVL System", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Forms.Main fmain = new Forms.Main();
+                    Forms.MainParent fmain = new Forms.MainParent();
                     fmain.Show();
                     Hide();
                 }

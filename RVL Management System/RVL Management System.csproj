@@ -189,6 +189,12 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainParent.Designer.cs">
+      <DependentUpon>MainParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PropertyAccountingBusinessView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,12 +297,6 @@
     <Compile Include="Forms\CompanyLoginsDelete.Designer.cs">
       <DependentUpon>CompanyLoginsDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CompanyLoginsMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CompanyLoginsMenu.Designer.cs">
-      <DependentUpon>CompanyLoginsMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CompanyLoginsUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,11 +333,11 @@
     <Compile Include="Forms\LeadAssigned.Designer.cs">
       <DependentUpon>LeadAssigned.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Marketing.cs">
+    <Compile Include="Forms\MarketingAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Marketing.Designer.cs">
-      <DependentUpon>Marketing.cs</DependentUpon>
+    <Compile Include="Forms\MarketingAdd.Designer.cs">
+      <DependentUpon>MarketingAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -491,9 +491,6 @@
     <EmbeddedResource Include="Forms\CompanyLoginsDelete.resx">
       <DependentUpon>CompanyLoginsDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CompanyLoginsMenu.resx">
-      <DependentUpon>CompanyLoginsMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CompanyLoginsUpdate.resx">
       <DependentUpon>CompanyLoginsUpdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,8 +533,11 @@
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Marketing.resx">
-      <DependentUpon>Marketing.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainParent.resx">
+      <DependentUpon>MainParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MarketingAdd.resx">
+      <DependentUpon>MarketingAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

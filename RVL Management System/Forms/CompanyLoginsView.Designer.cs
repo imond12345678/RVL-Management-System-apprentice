@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GridView = new MetroFramework.Controls.MetroGrid();
+            this.txt_search = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.cBoxSearchBy = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,25 +84,90 @@
             this.GridView.Size = new System.Drawing.Size(743, 402);
             this.GridView.TabIndex = 0;
             // 
-            // Frm_CompanyLoginsView
+            // txt_search
+            // 
+            // 
+            // 
+            // 
+            this.txt_search.CustomButton.Image = global::RVL_Management_System.Properties.Resources.magnifier;
+            this.txt_search.CustomButton.Location = new System.Drawing.Point(158, 1);
+            this.txt_search.CustomButton.Name = "";
+            this.txt_search.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_search.CustomButton.TabIndex = 1;
+            this.txt_search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_search.CustomButton.UseSelectable = true;
+            this.txt_search.Lines = new string[0];
+            this.txt_search.Location = new System.Drawing.Point(158, 92);
+            this.txt_search.MaxLength = 32767;
+            this.txt_search.Name = "txt_search";
+            this.txt_search.PasswordChar = '\0';
+            this.txt_search.PromptText = "Search";
+            this.txt_search.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_search.SelectedText = "";
+            this.txt_search.SelectionLength = 0;
+            this.txt_search.SelectionStart = 0;
+            this.txt_search.ShortcutsEnabled = true;
+            this.txt_search.ShowButton = true;
+            this.txt_search.ShowClearButton = true;
+            this.txt_search.Size = new System.Drawing.Size(180, 23);
+            this.txt_search.TabIndex = 8;
+            this.txt_search.UseSelectable = true;
+            this.txt_search.WaterMark = "Search";
+            this.txt_search.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_search.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_search.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txt_search_ButtonClick);
+            this.txt_search.ClearClicked += new MetroFramework.Controls.MetroTextBox.LUClear(this.txt_search_ClearClicked);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 70);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel1.TabIndex = 7;
+            this.metroLabel1.Text = "Search By:";
+            // 
+            // cBoxSearchBy
+            // 
+            this.cBoxSearchBy.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cBoxSearchBy.FormattingEnabled = true;
+            this.cBoxSearchBy.ItemHeight = 19;
+            this.cBoxSearchBy.Items.AddRange(new object[] {
+            "Category ID",
+            "Category Name"});
+            this.cBoxSearchBy.Location = new System.Drawing.Point(23, 92);
+            this.cBoxSearchBy.Name = "cBoxSearchBy";
+            this.cBoxSearchBy.Size = new System.Drawing.Size(129, 25);
+            this.cBoxSearchBy.TabIndex = 6;
+            this.cBoxSearchBy.UseSelectable = true;
+            // 
+            // CompanyLoginsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 548);
+            this.Controls.Add(this.txt_search);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.cBoxSearchBy);
             this.Controls.Add(this.GridView);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Frm_CompanyLoginsView";
+            this.Name = "CompanyLoginsView";
             this.Resizable = false;
             this.Text = "Company Logins View";
             this.Load += new System.EventHandler(this.Frm_CompanyLoginsView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private MetroFramework.Controls.MetroGrid GridView;
+        private MetroFramework.Controls.MetroTextBox txt_search;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroComboBox cBoxSearchBy;
     }
 }

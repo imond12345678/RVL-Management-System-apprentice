@@ -98,7 +98,7 @@
             this.txt_url.SelectionStart = 0;
             this.txt_url.ShortcutsEnabled = true;
             this.txt_url.Size = new System.Drawing.Size(197, 23);
-            this.txt_url.TabIndex = 8;
+            this.txt_url.TabIndex = 11;
             this.txt_url.UseSelectable = true;
             this.txt_url.WaterMark = "URL Link";
             this.txt_url.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -130,7 +130,7 @@
             this.txt_un.SelectionStart = 0;
             this.txt_un.ShortcutsEnabled = true;
             this.txt_un.Size = new System.Drawing.Size(197, 23);
-            this.txt_un.TabIndex = 9;
+            this.txt_un.TabIndex = 8;
             this.txt_un.UseSelectable = true;
             this.txt_un.WaterMark = "Username";
             this.txt_un.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -162,7 +162,7 @@
             this.txt_pw.SelectionStart = 0;
             this.txt_pw.ShortcutsEnabled = true;
             this.txt_pw.Size = new System.Drawing.Size(197, 23);
-            this.txt_pw.TabIndex = 10;
+            this.txt_pw.TabIndex = 9;
             this.txt_pw.UseSelectable = true;
             this.txt_pw.WaterMark = "Password";
             this.txt_pw.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -194,7 +194,7 @@
             this.txt_nameLogin.SelectionStart = 0;
             this.txt_nameLogin.ShortcutsEnabled = true;
             this.txt_nameLogin.Size = new System.Drawing.Size(197, 23);
-            this.txt_nameLogin.TabIndex = 11;
+            this.txt_nameLogin.TabIndex = 10;
             this.txt_nameLogin.UseSelectable = true;
             this.txt_nameLogin.WaterMark = "Name login under";
             this.txt_nameLogin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -261,6 +261,7 @@
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile1.UseSelectable = true;
             this.metroTile1.UseTileImage = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click_1);
             // 
             // groupBox1
             // 

@@ -45,7 +45,6 @@ namespace RVL_Management_System.Forms
             DataTable dt = new DataTable();
             da.Fill(dt);
             GridView.DataSource = dt;
-            MetroMessageBox.Show(this, "Data Found!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Information);
             conn.Close();
 
             cmd.Parameters.Clear();
@@ -122,11 +121,10 @@ namespace RVL_Management_System.Forms
                 txt_pw.Text = row.Cells[4].Value.ToString();
                 txt_nameLogin.Text = row.Cells[5].Value.ToString();
                 txt_giveAccess.Text = row.Cells[6].Value.ToString();
-                MetroMessageBox.Show(this, "Data Found!", "RVL Systems", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
-                MetroMessageBox.Show(this,"No Data Found!","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Error);
+               
             }
         }
 
@@ -142,6 +140,14 @@ namespace RVL_Management_System.Forms
 
         private void txt_search_ButtonClick(object sender, EventArgs e)
         {
+            if (txt_search.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Please enter company name!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                search();
+            }
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in GridView.SelectedCells)
             {
@@ -150,18 +156,12 @@ namespace RVL_Management_System.Forms
             }
             if (cell != null)
             {
-                if (txt_search.Text == string.Empty)
-                {
-                    MetroMessageBox.Show(this, "Please enter company name!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    search();
-                }
+               
             }
             else
             {
                 MetroMessageBox.Show(this, "No Data Found!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clear();
             }
             
         }

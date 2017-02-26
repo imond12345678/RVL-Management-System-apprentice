@@ -26,6 +26,16 @@ namespace RVL_Management_System.Forms
             InitializeComponent();
         }
 
+        public void clear()
+        {
+            txt_categoryName.Text = null;
+            txt_un.Text = null;
+            txt_pw.Text = null;
+            txt_nameLogin.Text = null;
+            txt_url.Text = null;
+            txt_giveAccess.Text = null;
+        }
+
         private void Frm_CompanyLogins_Load(object sender, EventArgs e)
         {
 
@@ -53,6 +63,7 @@ namespace RVL_Management_System.Forms
                     nameLogin = txt_nameLogin.Text;
                     giveAccess = txt_giveAccess.Text;
                     Class.Cls_cmd.companyAdd();
+                    clear();
                 }
                 else
                 {
@@ -61,6 +72,11 @@ namespace RVL_Management_System.Forms
                 }
             }
            
+        }
+
+        private void metroTile1_Click_1(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

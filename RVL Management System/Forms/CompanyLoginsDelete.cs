@@ -67,7 +67,7 @@ namespace RVL_Management_System.Forms
         public void clear()
         {
             txt_cid.Text = null;
-            txt_delete.Text = null;
+            txt_search.Text = null;
         }
 
         private void Frm_CompanyLoginsDelete_Load(object sender, EventArgs e)
@@ -92,11 +92,6 @@ namespace RVL_Management_System.Forms
             {
                 DataGridViewRow row = cell.OwningRow;
                 txt_cid.Text = row.Cells[0].Value.ToString();
-                txt_delete.Text = row.Cells[1].Value.ToString();
-            }
-            else
-            {
-                MetroMessageBox.Show(this,"No Data Found!","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -112,34 +107,50 @@ namespace RVL_Management_System.Forms
 
         private void txt_search_ButtonClick(object sender, EventArgs e)
         {
+            if (txt_search.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Search you want to delete!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                search();
+            }
+
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in GridView.SelectedCells)
             {
                 cell = selectedCell;
                 break;
             }
-            if (cell != null)
+            if (cell == null)
             {
-                if (txt_search.Text == string.Empty)
-                {
-                    MetroMessageBox.Show(this, "Search you want to delete!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    search();
-                }
+                MetroMessageBox.Show(this, "No Data Found!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_cid.Text = null;
             }
             else
             {
-                MetroMessageBox.Show(this, "No Data Found!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }  
+                
+            }
         }
 
         private void txt_delete_ButtonClick(object sender, EventArgs e)
         {
-            if(txt_delete.Text == string.Empty)
+           
+        }
+
+        private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                MetroMessageBox.Show(this,"Enter a Company Name you want to delete!","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                e.Handled = true;
+            }
+        }
+
+        private void btn_delete_Click_1(object sender, EventArgs e)
+        {
+            if (txt_cid.Text == string.Empty)
+            {
+                MetroMessageBox.Show(this, "Enter a Company Name you want to delete!", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txt_cid.Text == string.Empty)
             {
@@ -152,7 +163,7 @@ namespace RVL_Management_System.Forms
                     CID = txt_cid.Text;
                     Class.Cls_cmd.companyDelete();
                     refresh();
-                    MetroMessageBox.Show(this,"Succesfully Deleted","RVL Systems",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MetroMessageBox.Show(this, "Succesfully Deleted", "RVL Systems", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
                 }
                 else
@@ -160,14 +171,6 @@ namespace RVL_Management_System.Forms
                     //IF NO
                     //TODO: NOTHING
                 }
-            }
-        }
-
-        private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
             }
         }
     }

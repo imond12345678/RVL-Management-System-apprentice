@@ -290,7 +290,7 @@
             // 
             // 
             // 
-            this.txt_search.CustomButton.Image = global::RVL_Management_System.Properties.Resources.search;
+            this.txt_search.CustomButton.Image = global::RVL_Management_System.Properties.Resources.magnifier;
             this.txt_search.CustomButton.Location = new System.Drawing.Point(175, 1);
             this.txt_search.CustomButton.Name = "";
             this.txt_search.CustomButton.Size = new System.Drawing.Size(21, 21);
@@ -337,6 +337,7 @@
             this.txt_cid.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txt_cid.CustomButton.UseSelectable = true;
             this.txt_cid.CustomButton.Visible = false;
+            this.txt_cid.Enabled = false;
             this.txt_cid.Lines = new string[0];
             this.txt_cid.Location = new System.Drawing.Point(235, 82);
             this.txt_cid.MaxLength = 32767;
