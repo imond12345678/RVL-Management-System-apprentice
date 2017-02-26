@@ -351,5 +351,12 @@ namespace RVL_Management_System.Forms
             childform.MdiParent = this;
             childform.Show();
         }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_Login login = new Frm_Login();
+            login.Show();
+            Hide();
+        }
     }
 }

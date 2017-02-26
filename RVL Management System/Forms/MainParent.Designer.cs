@@ -94,6 +94,7 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emailCredentialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +107,8 @@
             this.editMenu,
             this.toolsMenu,
             this.windowsMenu,
-            this.logoutToolStripMenuItem});
+            this.logoutToolStripMenuItem,
+            this.logoutToolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(20, 60);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
@@ -626,6 +628,13 @@
             this.emailCredentialsToolStripMenuItem.Text = "Email Credentials";
             this.emailCredentialsToolStripMenuItem.Click += new System.EventHandler(this.emailCredentialsToolStripMenuItem_Click);
             // 
+            // logoutToolStripMenuItem1
+            // 
+            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem1.Text = "&Logout";
+            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
+            // 
             // MainParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,6 +725,7 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emailCredentialsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
     }
 }
 
