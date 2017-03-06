@@ -261,7 +261,7 @@
             this.AcceptButton = this.btn_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 261);
+            this.ClientSize = new System.Drawing.Size(434, 261);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.metroLabel1);

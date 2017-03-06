@@ -21,7 +21,7 @@ namespace RVL_Management_System.Forms
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Main childForm = new Main();
+            AdminOfficeAdd childForm = new AdminOfficeAdd();
             childForm.MdiParent = this;
             childForm.Show();
         }
